@@ -1,7 +1,7 @@
 ﻿
 namespace kerjapraktik
 {
-    partial class Form1
+    partial class FormInputArtikelPotong
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@ namespace kerjapraktik
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // FormInputArtikelPotong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(680, 476);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(762, 564);
+            this.Name = "FormInputArtikelPotong";
+            this.Text = "Input Artikel Potong";
             this.ResumeLayout(false);
 
         }
@@ -45,4 +45,3 @@ namespace kerjapraktik
         #endregion
     }
 }
-

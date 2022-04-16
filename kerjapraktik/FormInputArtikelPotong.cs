@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace kerjapraktik
 {
-    public partial class Form1 : Form
+    public partial class FormInputArtikelPotong : Form
     {
-        public Form1()
+        public FormInputArtikelPotong()
         {
             InitializeComponent();
         }
