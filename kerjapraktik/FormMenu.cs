@@ -19,7 +19,8 @@ namespace kerjapraktik
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.IsMdiContainer = true;
         }
 
         private void keluarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,7 +31,18 @@ namespace kerjapraktik
 
         private void artikelPotongToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form form = Application.OpenForms["FormInputArtikelPotong"];
+            if (form == null)
+            {
+                FormInputArtikelPotong formInputArtikelPotong = new FormInputArtikelPotong();
+                formInputArtikelPotong.MdiParent = this;
+                formInputArtikelPotong.Show();
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
         }
     }
 }
