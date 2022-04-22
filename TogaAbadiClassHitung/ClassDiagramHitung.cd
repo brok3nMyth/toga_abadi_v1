@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TogaAbadiClassHitung.Users">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQBAAAEACAAAAAgCAAAAAgAAAAA=</HashCode>
+      <FileName>Users.cs</FileName>
+      <NewMemberFileName>users.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Pekerjas" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TogaAbadiClassHitung.Pekerjas">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Pekerjas.cs</FileName>
+      <NewMemberFileName>pekerjas.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TogaAbadiClassHitung.ArtikelPotongs">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEEQAAAAEAACAAAABhAAAABQBAAAQAAAAAAAAAABAAA=</HashCode>
+      <FileName>ArtikelPotongs.cs</FileName>
+      <NewMemberFileName>artikelPotongs.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TogaAbadiClassHitung.Bagians">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAIAAACAAAAAgBAAAIAQAAAAAABAAAAAAIAAAAA=</HashCode>
+      <FileName>Bagians.cs</FileName>
+      <NewMemberFileName>bagians.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ArtikelPotongs" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TogaAbadiClassHitung.Gajis">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAEAQAAAAEAAAMAABADAABAAAIAUAACAAAAAggABA=</HashCode>
+      <FileName>Gajis.cs</FileName>
+      <NewMemberFileName>gajis.cs</NewMemberFileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Bagians" />
+      <Property Name="Pekerjas" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

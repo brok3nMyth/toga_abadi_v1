@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormInputGaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInputGaji.Designer.cs">
+      <DependentUpon>FormInputGaji.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormInputArtikelPotong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormInputArtikelPotong.Designer.cs">
       <DependentUpon>FormInputArtikelPotong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormInputPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInputPegawai.Designer.cs">
+      <DependentUpon>FormInputPegawai.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMenu.cs">
       <SubType>Form</SubType>
@@ -60,8 +72,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormInputGaji.resx">
+      <DependentUpon>FormInputGaji.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInputArtikelPotong.resx">
       <DependentUpon>FormInputArtikelPotong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInputPegawai.resx">
+      <DependentUpon>FormInputPegawai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
@@ -87,6 +105,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TogaAbadiClassHitung\TogaAbadiClassHitung.csproj">
+      <Project>{9b73ef79-c8d7-4daf-8d87-503ba45b8fd6}</Project>
+      <Name>TogaAbadiClassHitung</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
