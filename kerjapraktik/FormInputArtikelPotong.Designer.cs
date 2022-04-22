@@ -35,14 +35,16 @@ namespace kerjapraktik
             this.textBoxKodeArtikel = new System.Windows.Forms.TextBox();
             this.textBoxBrand = new System.Windows.Forms.TextBox();
             this.dataGridViewData = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.seri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yard_kain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeXL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jumlah = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,23 +107,6 @@ namespace kerjapraktik
             this.dataGridViewData.Size = new System.Drawing.Size(736, 274);
             this.dataGridViewData.TabIndex = 31;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(651, 56);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(99, 28);
-            this.textBox1.TabIndex = 33;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(594, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "KAIN : ";
-            // 
             // seri
             // 
             this.seri.HeaderText = "Seri";
@@ -152,11 +137,47 @@ namespace kerjapraktik
             this.jumlah.HeaderText = "Jumlah";
             this.jumlah.Name = "jumlah";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(651, 56);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(99, 28);
+            this.textBox1.TabIndex = 33;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(594, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "KAIN : ";
+            // 
+            // textBoxTotal
+            // 
+            this.textBoxTotal.Location = new System.Drawing.Point(651, 442);
+            this.textBoxTotal.Multiline = true;
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(99, 28);
+            this.textBoxTotal.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(594, 450);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "TOTAL : ";
+            // 
             // FormInputArtikelPotong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(762, 564);
+            this.Controls.Add(this.textBoxTotal);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridViewData);
@@ -189,5 +210,7 @@ namespace kerjapraktik
         private System.Windows.Forms.DataGridViewTextBoxColumn jumlah;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxTotal;
+        private System.Windows.Forms.Label label5;
     }
 }
