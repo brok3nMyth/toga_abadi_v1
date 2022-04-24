@@ -31,5 +31,20 @@ namespace TogaAbadiClassHitung
         public string Bagian { get => bagian; set => bagian = value; }
         public int Tersedia { get => tersedia; set => tersedia = value; }
         public int Biaya_Satuan { get => biaya_Satuan; set => biaya_Satuan = value; }
+
+        public static void TambahData(Bagians parBagians)
+        {
+            string sql = "INSERT INTO Bagians(Bagians, Tersedia, biaya_Satuan) values ('" + parBagians.Bagian+ "', '" + parBagians.Tersedia+ "', '" + parBagians.Biaya_Satuan+ "')";
+
+            Koneksi.JalankanPerintahDML(sql);
+        }
+        //ubah data
+        public static void HapusData(Bagians parBagians)
+        {
+            string sql = "DELETE FROM Bagians WHERE Username='" + parBagians.IdBagians + "'";
+
+            Koneksi.JalankanPerintahDML(sql);
+        }
     }
+}
 }
