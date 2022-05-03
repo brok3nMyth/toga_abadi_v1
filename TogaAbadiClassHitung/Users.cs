@@ -7,10 +7,14 @@ namespace TogaAbadiClassHitung
 {
     public class Users
     {
+        #region fields
         private int username;
         private int password;
         private int isAdmin;
         //public ICollection<Pekerjas> Pekerjas { get; set; }
+        #endregion
+
+        #region constructor
         public Pekerjas Pekerjas
         {
             get => default(Pekerjas);
@@ -25,11 +29,15 @@ namespace TogaAbadiClassHitung
             Password = password;
             IsAdmin = isAdmin;
         }
+        #endregion
 
+        #region properties
         public int Username { get => username; set => username = value; }
         public int Password { get => password; set => password = value; }
         public int IsAdmin { get => isAdmin; set => isAdmin = value; }
+        #endregion
 
+        #region method
         public static void TambahData(Users parUsers)
         {
             string sql = "INSERT INTO users(Username, Password, isAdmin) values ('" + parUsers.Username + "', '" + parUsers.Password + "', '" + parUsers.isAdmin + "', '" + parUsers.Pekerjas + "')";
@@ -42,5 +50,6 @@ namespace TogaAbadiClassHitung
 
             Koneksi.JalankanPerintahDML(sql);
         }
+        #endregion
     }
 }
