@@ -7,11 +7,14 @@ namespace TogaAbadiClassHitung
 {
     public class Bagians
     {
+        #region fields 
         private int idBagians;
         private string bagian;
         private int tersedia;
         private int biaya_Satuan;
+        #endregion
 
+        #region constructor
         public Bagians(int idBagians, string bagian, int tersedia, int biaya_Satuan)
         {
             IdBagians = idBagians;
@@ -26,7 +29,9 @@ namespace TogaAbadiClassHitung
             {
             }
         }
+        #endregion
 
+        #region properties
         public int IdBagians { get => idBagians; set => idBagians = value; }
         public string Bagian { get => bagian; set => bagian = value; }
         public int Tersedia { get => tersedia; set => tersedia = value; }

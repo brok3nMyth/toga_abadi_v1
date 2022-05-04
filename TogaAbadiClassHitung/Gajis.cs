@@ -7,6 +7,7 @@ namespace TogaAbadiClassHitung
 {
     public class Gajis
     {
+        #region fields
         private int idGaji;
         private int diambil;
         private int subtotal;
@@ -15,7 +16,8 @@ namespace TogaAbadiClassHitung
         private int totalKasbon;
         private int potonganKasbon;
         private int totalGaji;
-
+        #endregion
+        #region constructor
         public Gajis(int idGaji, int diambil, int subtotal, int sisaKasbon, int kasbon, int totalKasbon, int potonganKasbon, int totalGaji)
         {
             IdGaji = idGaji;
@@ -41,7 +43,8 @@ namespace TogaAbadiClassHitung
             {
             }
         }
-
+        #endregion
+        #region properties
         public int IdGaji { get => idGaji; set => idGaji = value; }
         public int Diambil { get => diambil; set => diambil = value; }
         public int Subtotal { get => subtotal; set => subtotal = value; }
@@ -50,5 +53,10 @@ namespace TogaAbadiClassHitung
         public int TotalKasbon { get => totalKasbon; set => totalKasbon = value; }
         public int PotonganKasbon { get => potonganKasbon; set => potonganKasbon = value; }
         public int TotalGaji { get => totalGaji; set => totalGaji = value; }
+        #endregion
+
+        #region method
+
+        #endregion
     }
 }
