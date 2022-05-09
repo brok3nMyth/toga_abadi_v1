@@ -45,6 +45,7 @@ namespace kerjapraktik
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonTambahBagian = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,11 +172,22 @@ namespace kerjapraktik
             this.label5.TabIndex = 34;
             this.label5.Text = "TOTAL : ";
             // 
+            // buttonTambahBagian
+            // 
+            this.buttonTambahBagian.Location = new System.Drawing.Point(14, 440);
+            this.buttonTambahBagian.Name = "buttonTambahBagian";
+            this.buttonTambahBagian.Size = new System.Drawing.Size(134, 30);
+            this.buttonTambahBagian.TabIndex = 36;
+            this.buttonTambahBagian.Text = "Tambah Bagian";
+            this.buttonTambahBagian.UseVisualStyleBackColor = true;
+            this.buttonTambahBagian.Click += new System.EventHandler(this.buttonTambahBagian_Click);
+            // 
             // FormInputArtikelPotong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 564);
+            this.ClientSize = new System.Drawing.Size(762, 485);
+            this.Controls.Add(this.buttonTambahBagian);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox1);
@@ -212,5 +224,6 @@ namespace kerjapraktik
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonTambahBagian;
     }
 }

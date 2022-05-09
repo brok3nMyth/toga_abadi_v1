@@ -39,7 +39,7 @@ namespace TogaAbadiClassHitung
 
             Koneksi.JalankanPerintahDML(sql);
         }
+        #endregion
     }
 }
-    
-}
+ 

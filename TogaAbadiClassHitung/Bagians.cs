@@ -37,6 +37,8 @@ namespace TogaAbadiClassHitung
         public int Tersedia { get => tersedia; set => tersedia = value; }
         public int Biaya_Satuan { get => biaya_Satuan; set => biaya_Satuan = value; }
 
+        #endregion
+        #region method
         public static void TambahData(Bagians parBagians)
         {
             string sql = "INSERT INTO Bagians(Bagians, Tersedia, biaya_Satuan) values ('" + parBagians.Bagian+ "', '" + parBagians.Tersedia+ "', '" + parBagians.Biaya_Satuan+ "')";
@@ -50,6 +52,6 @@ namespace TogaAbadiClassHitung
 
             Koneksi.JalankanPerintahDML(sql);
         }
+        #endregion
     }
-}
 }

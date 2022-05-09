@@ -57,7 +57,6 @@ namespace kerjapraktik
             this.menuStripMenu.Size = new System.Drawing.Size(680, 24);
             this.menuStripMenu.TabIndex = 0;
             this.menuStripMenu.Text = "menuStripMenu";
-         
             // 
             // inputDataToolStripMenuItem
             // 
@@ -103,6 +102,7 @@ namespace kerjapraktik
             this.artikelPotongToolStripMenuItem1.Name = "artikelPotongToolStripMenuItem1";
             this.artikelPotongToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.artikelPotongToolStripMenuItem1.Text = "Artikel Potong";
+            this.artikelPotongToolStripMenuItem1.Click += new System.EventHandler(this.artikelPotongToolStripMenuItem1_Click);
             // 
             // pekerjaToolStripMenuItem1
             // 

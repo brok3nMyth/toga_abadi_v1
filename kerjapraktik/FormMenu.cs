@@ -44,5 +44,10 @@ namespace kerjapraktik
                 form.BringToFront();
             }
         }
+
+        private void artikelPotongToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
