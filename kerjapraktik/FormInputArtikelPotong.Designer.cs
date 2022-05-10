@@ -200,6 +200,7 @@ namespace kerjapraktik
             this.Controls.Add(this.label1);
             this.Name = "FormInputArtikelPotong";
             this.Text = "Input Artikel Potong";
+            this.Load += new System.EventHandler(this.FormInputArtikelPotong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
