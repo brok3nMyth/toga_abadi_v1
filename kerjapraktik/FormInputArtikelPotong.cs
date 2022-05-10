@@ -23,7 +23,7 @@ namespace kerjapraktik
             if (form == null)
             {
                 FormBagian formBagian = new FormBagian();
-                formBagian.MdiParent = this;
+                formBagian.MdiParent = this.MdiParent;
                 formBagian.Show();
             }
             else
@@ -31,6 +31,34 @@ namespace kerjapraktik
                 form.Show();
                 form.BringToFront();
             }
+        }
+
+        private void FormInputArtikelPotong_Load(object sender, EventArgs e)
+        {
+         
+        }
+        private void FormatDataGrid()
+        {
+            dataGridViewData.Columns.Clear();
+
+            dataGridViewData.Columns.Add("Seri", "Seri");
+            dataGridViewData.Columns.Add("Yard Kain", "Yard");
+            dataGridViewData.Columns.Add("Size M", "M");
+            dataGridViewData.Columns.Add("Size L", "L");
+            dataGridViewData.Columns.Add("Size XL", "XL");
+            dataGridViewData.Columns.Add("Jumlah", "Jumlah");
+
+
+            dataGridViewData.Columns["KodeBarang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+           
+
+            dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
+            dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";
+
+            dataGridViewData.AllowUserToAddRows = true;
+            dataGridViewData.ReadOnly = false;
         }
     }
 }

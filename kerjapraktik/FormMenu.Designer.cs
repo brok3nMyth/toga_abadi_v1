@@ -80,12 +80,14 @@ namespace kerjapraktik
             this.pToolStripMenuItem.Name = "pToolStripMenuItem";
             this.pToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pToolStripMenuItem.Text = "Pekerja";
+            this.pToolStripMenuItem.Click += new System.EventHandler(this.pToolStripMenuItem_Click);
             // 
             // gajiToolStripMenuItem1
             // 
             this.gajiToolStripMenuItem1.Name = "gajiToolStripMenuItem1";
             this.gajiToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.gajiToolStripMenuItem1.Text = "Gaji";
+            this.gajiToolStripMenuItem1.Click += new System.EventHandler(this.gajiToolStripMenuItem1_Click);
             // 
             // tampilkanDataToolStripMenuItem
             // 
@@ -109,12 +111,14 @@ namespace kerjapraktik
             this.pekerjaToolStripMenuItem1.Name = "pekerjaToolStripMenuItem1";
             this.pekerjaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.pekerjaToolStripMenuItem1.Text = "Pekerja";
+            this.pekerjaToolStripMenuItem1.Click += new System.EventHandler(this.pekerjaToolStripMenuItem1_Click);
             // 
             // gajiToolStripMenuItem
             // 
             this.gajiToolStripMenuItem.Name = "gajiToolStripMenuItem";
             this.gajiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gajiToolStripMenuItem.Text = "Gaji";
+            this.gajiToolStripMenuItem.Click += new System.EventHandler(this.gajiToolStripMenuItem_Click);
             // 
             // ubahDataToolStripMenuItem
             // 
@@ -130,12 +134,14 @@ namespace kerjapraktik
             this.artikelPotongToolStripMenuItem2.Name = "artikelPotongToolStripMenuItem2";
             this.artikelPotongToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.artikelPotongToolStripMenuItem2.Text = "Artikel Potong";
+            this.artikelPotongToolStripMenuItem2.Click += new System.EventHandler(this.artikelPotongToolStripMenuItem2_Click);
             // 
             // pekerjaToolStripMenuItem
             // 
             this.pekerjaToolStripMenuItem.Name = "pekerjaToolStripMenuItem";
             this.pekerjaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pekerjaToolStripMenuItem.Text = "Pekerja";
+            this.pekerjaToolStripMenuItem.Click += new System.EventHandler(this.pekerjaToolStripMenuItem_Click);
             // 
             // keluarToolStripMenuItem
             // 
