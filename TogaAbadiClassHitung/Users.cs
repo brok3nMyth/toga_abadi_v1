@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MySql.Data.MySqlClient;
 
 namespace TogaAbadiClassHitung
 {
@@ -11,6 +12,7 @@ namespace TogaAbadiClassHitung
         private int username;
         private int password;
         private int isAdmin;
+        private Pekerjas pekerjas;
         //public ICollection<Pekerjas> Pekerjas { get; set; }
         #endregion
 
@@ -23,11 +25,12 @@ namespace TogaAbadiClassHitung
             }
         }
 
-        public Users(int username, int password, int isAdmin)
+        public Users(int username, int password, int isAdmin, Pekerjas pekerjas)
         {
             Username = username;
             Password = password;
             IsAdmin = isAdmin;
+            Pekerjas = pekerjas;
         }
         #endregion
 
@@ -49,6 +52,27 @@ namespace TogaAbadiClassHitung
             string sql = "DELETE FROM Users WHERE Username='" + parUsers.Username + "'";
 
             Koneksi.JalankanPerintahDML(sql);
+        }
+        public static string Login(Users parUsername, Users parPassword)
+        {
+            string sql = "select password from users where username like " + parUsername;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            string pass = hasil.GetValue(0).ToString();
+
+            string status = "";
+
+            if (Equals(pass,parPassword))
+            {
+                status = "login";
+                
+            }
+            else
+            {
+                status = "fail";
+            }
+            return status;
         }
         #endregion
     }

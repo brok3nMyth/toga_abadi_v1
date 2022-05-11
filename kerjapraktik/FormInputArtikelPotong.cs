@@ -35,7 +35,7 @@ namespace kerjapraktik
 
         private void FormInputArtikelPotong_Load(object sender, EventArgs e)
         {
-         
+            FormatDataGrid();
         }
         private void FormatDataGrid()
         {
@@ -48,15 +48,18 @@ namespace kerjapraktik
             dataGridViewData.Columns.Add("Size XL", "XL");
             dataGridViewData.Columns.Add("Jumlah", "Jumlah");
 
+            dataGridViewData.Columns["Seri"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["Yard"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["M"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["L"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["XL"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["Jumlah"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-            dataGridViewData.Columns["KodeBarang"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["Jumlah"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-            dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-           
-
-            dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
-            dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";
-
+            /* dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
+             dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";*/
+      
             dataGridViewData.AllowUserToAddRows = true;
             dataGridViewData.ReadOnly = false;
         }
