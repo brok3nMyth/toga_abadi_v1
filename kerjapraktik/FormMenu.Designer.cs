@@ -42,6 +42,7 @@ namespace kerjapraktik
             this.artikelPotongToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pekerjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.keluarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gajiToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,21 +72,21 @@ namespace kerjapraktik
             // artikelPotongToolStripMenuItem
             // 
             this.artikelPotongToolStripMenuItem.Name = "artikelPotongToolStripMenuItem";
-            this.artikelPotongToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.artikelPotongToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.artikelPotongToolStripMenuItem.Text = "Artikel Potong";
             this.artikelPotongToolStripMenuItem.Click += new System.EventHandler(this.artikelPotongToolStripMenuItem_Click);
             // 
             // pToolStripMenuItem
             // 
             this.pToolStripMenuItem.Name = "pToolStripMenuItem";
-            this.pToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.pToolStripMenuItem.Text = "Pekerja";
             this.pToolStripMenuItem.Click += new System.EventHandler(this.pToolStripMenuItem_Click);
             // 
             // gajiToolStripMenuItem1
             // 
             this.gajiToolStripMenuItem1.Name = "gajiToolStripMenuItem1";
-            this.gajiToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.gajiToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.gajiToolStripMenuItem1.Text = "Gaji";
             this.gajiToolStripMenuItem1.Click += new System.EventHandler(this.gajiToolStripMenuItem1_Click);
             // 
@@ -124,7 +125,8 @@ namespace kerjapraktik
             // 
             this.ubahDataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.artikelPotongToolStripMenuItem2,
-            this.pekerjaToolStripMenuItem});
+            this.pekerjaToolStripMenuItem,
+            this.gajiToolStripMenuItem2});
             this.ubahDataToolStripMenuItem.Name = "ubahDataToolStripMenuItem";
             this.ubahDataToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.ubahDataToolStripMenuItem.Text = "Ubah Data";
@@ -149,6 +151,13 @@ namespace kerjapraktik
             this.keluarToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.keluarToolStripMenuItem.Text = "Keluar";
             this.keluarToolStripMenuItem.Click += new System.EventHandler(this.keluarToolStripMenuItem_Click);
+            // 
+            // gajiToolStripMenuItem2
+            // 
+            this.gajiToolStripMenuItem2.Name = "gajiToolStripMenuItem2";
+            this.gajiToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.gajiToolStripMenuItem2.Text = "Gaji";
+            this.gajiToolStripMenuItem2.Click += new System.EventHandler(this.gajiToolStripMenuItem2_Click);
             // 
             // FormMenu
             // 
@@ -183,6 +192,7 @@ namespace kerjapraktik
         private System.Windows.Forms.ToolStripMenuItem gajiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem artikelPotongToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem pekerjaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gajiToolStripMenuItem2;
     }
 }
 

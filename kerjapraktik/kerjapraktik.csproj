@@ -112,6 +112,24 @@
     <Compile Include="FormUbahArtPotong.Designer.cs">
       <DependentUpon>FormUbahArtPotong.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUbahBagian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahBagian.Designer.cs">
+      <DependentUpon>FormUbahBagian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahGaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahGaji.Designer.cs">
+      <DependentUpon>FormUbahGaji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahGajiDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahGajiDetail.Designer.cs">
+      <DependentUpon>FormUbahGajiDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUbahPegawai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +170,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUbahArtPotong.resx">
       <DependentUpon>FormUbahArtPotong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahBagian.resx">
+      <DependentUpon>FormUbahBagian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahGaji.resx">
+      <DependentUpon>FormUbahGaji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahGajiDetail.resx">
+      <DependentUpon>FormUbahGajiDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUbahPegawai.resx">
       <DependentUpon>FormUbahPegawai.cs</DependentUpon>

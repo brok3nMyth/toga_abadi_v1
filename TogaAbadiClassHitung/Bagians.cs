@@ -25,7 +25,14 @@ namespace TogaAbadiClassHitung
             Tersedia = tersedia;
             Biaya_Satuan = biaya_Satuan;
         }
-        
+        public Bagians(int idBagians, string bagian, int tersedia, int biaya_Satuan)
+        {
+            IdBagians = idBagians;
+            Bagian = bagian;
+            Tersedia = tersedia;
+            Biaya_Satuan = biaya_Satuan;
+        }
+
         #endregion
 
         #region properties

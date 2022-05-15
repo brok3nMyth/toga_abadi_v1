@@ -25,7 +25,7 @@ namespace TogaAbadiClassHitung
 
         #endregion
         #region constructor
-        public Gajis(int idGaji, int diambil, int subtotal, int sisaKasbon, int kasbon, int totalKasbon, int potonganKasbon, int totalGaji)
+        public Gajis(int idGaji, int diambil, int subtotal, int sisaKasbon, int kasbon, int totalKasbon, int potonganKasbon, int totalGaji, Pekerjas pekerjas, Bagians bagians)
         {
             IdGaji = idGaji;
             Diambil = diambil;
@@ -35,6 +35,8 @@ namespace TogaAbadiClassHitung
             TotalKasbon = totalKasbon;
             PotonganKasbon = potonganKasbon;
             TotalGaji = totalGaji;
+            Pekerjas = pekerjas;
+            Bagians = bagians;
         }
         public Pekerjas Pekerjas
         {
@@ -64,50 +66,58 @@ namespace TogaAbadiClassHitung
         #endregion
 
         #region method
-        public static void TambahData(Bagians parBagians)
+        public static void TambahData(Gajis parGajis)
         {
-            string sql = "INSERT INTO Bagians(Bagians, Tersedia, biaya_Satuan) values ('" + parBagians.Bagian + "', '" + parBagians.Tersedia + "', '" + parBagians.Biaya_Satuan + "')";
+            string sql = "INSERT INTO Gajis(pekerjas_id,models_id,diambil,subtotal,sisaKasbon,kasbon,totalKasbon,potonganKasbon,totalGaji) values ('" 
+                + parGajis.Pekerjas.IdPekerjas + "', '" + parGajis.Bagians.IdBagians + "', '" + parGajis.Diambil + "', '" +parGajis.Subtotal + "', '" +parGajis.SisaKasbon+ "', '" +
+                parGajis.Kasbon+ "', '" +parGajis.TotalKasbon + "', '" +parGajis.PotonganKasbon+ "', '" +parGajis.TotalGaji+ "')";
 
             Koneksi.JalankanPerintahDML(sql);
         }
         //ubah data
-        public static void HapusData(Bagians parBagians)
+        public static void HapusData(Gajis parGajis)
         {
-            string sql = "DELETE FROM Bagians WHERE Username='" + parBagians.IdBagians + "'";
+            string sql = "DELETE FROM Gajis WHERE id='" + parGajis.IdGaji + "'";
 
             Koneksi.JalankanPerintahDML(sql);
         }
 
         //lihat data 
 
-        public static List<Bagians> BacaData(string kriteria, string nilaiKriteria)
+        public static List<Gajis> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "";
             if (kriteria == "")
             {
                 //sql = "select B.idBagians, B.id_artikel, B.bagian, B.tersedia, B.biaya_satuan from Bagians B ";
-                sql = "select B.id, B.id_artikel, B.bagian, B.tersedia, B.biaya_satuan,  ap.brand, ap.kain, ap.seri, ap.yard, ap.size_S, ap.size_M, ap.size_L, ap.size_XL " +
-                    "from Bagians B inner join ArtikelPotongs ap on B.id_artikel = ap.id";
+                sql = "SELECT * FROM gajis g" +
+                    "LEFT JOIN bagians b on g.models_id = b.id " +
+                    "LEFT JOIN pekerjas p on g.pekerjas_id = p.id";
+                    //"SELECT * FROM gajis g " +"LEFT JOIN bagians b on g.models_id = b.id" +"LEFT JOIN artikelpotongs ap on ap.id = b.id_artikel";
             }
             else
             {
-                sql = "select B.id, B.id_artikel, B.bagian, B.tersedia, B.biaya_satuan,  ap.brand, ap.kain, ap.seri, ap.yard, ap.size_S, ap.size_M, ap.size_L, ap.size_XL " +
-                    "from Bagians B inner join ArtikelPotongs ap on B.id_artikel = ap.id where " + kriteria + " LIKE '%" +
+                sql = "SELECT * FROM gajis g" +
+                    "LEFT JOIN bagians b on g.models_id = b.id " +
+                    "LEFT JOIN pekerjas p on g.pekerjas_id = p.id WHERE" + kriteria + " LIKE '%" +
                     nilaiKriteria + "%'";
             }
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-            List<Bagians> listBagians = new List<Bagians>();
+            List<Gajis> listGajis = new List<Gajis>();
             while (hasil.Read() == true)
             {
-                ArtikelPotongs artikel = new ArtikelPotongs(hasil.GetValue(1).ToString(), hasil.GetValue(5).ToString(), hasil.GetValue(6).ToString(), hasil.GetValue(7).ToString(), int.Parse(hasil.GetValue(8).ToString()), int.Parse(hasil.GetValue(9).ToString()), int.Parse(hasil.GetValue(10).ToString()), int.Parse(hasil.GetValue(11).ToString()), int.Parse(hasil.GetValue(12).ToString()));
+                Bagians b = new Bagians(int.Parse(hasil.GetValue(11).ToString()), hasil.GetValue(13).ToString(), int.Parse(hasil.GetValue(14).ToString()), int.Parse(hasil.GetValue(15).ToString()));
+                
+                Pekerjas p = new Pekerjas(int.Parse(hasil.GetValue(16).ToString()), hasil.GetValue(17).ToString());
 
-                Bagians b = new Bagians(int.Parse(hasil.GetValue(0).ToString()), artikel, hasil.GetValue(2).ToString(), int.Parse(hasil.GetValue(3).ToString()),
-                    int.Parse(hasil.GetValue(4).ToString()));
+                Gajis g = new Gajis(int.Parse(hasil.GetValue(0).ToString()), int.Parse(hasil.GetValue(3).ToString()), int.Parse(hasil.GetValue(4).ToString()),
+                    int.Parse(hasil.GetValue(5).ToString()), int.Parse(hasil.GetValue(6).ToString()), int.Parse(hasil.GetValue(7).ToString()),
+                    int.Parse(hasil.GetValue(8).ToString()), int.Parse(hasil.GetValue(9).ToString()), p, b);
 
-                listBagians.Add(b);
+                listGajis.Add(g);
             }
-            return listBagians;
+            return listGajis;
         }
         #endregion
     }
