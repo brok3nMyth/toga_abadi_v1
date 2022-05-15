@@ -17,26 +17,47 @@ namespace kerjapraktik
         {
             InitializeComponent();
         }
+        //List<Users> listusers = new List<Users>();
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                Koneksi k = new Koneksi("localhost", "toga_abadi_v1", "root", ""); // "superadmin", "WXWdh41aYBKzi15R"); //'root','' 
+                Koneksi k2 = new Koneksi();
 
+                MessageBox.Show("Koneksi berhasil","Informasi");
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Connection failed. Error message : " + exc.Message);
+            }
+        }
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                if (textBoxUsername.Text != "")
+                if (textBoxUsername.Text != "" && textBoxPassword.Text != "")
                 {
-                    Koneksi k = new Koneksi("localhost", "db", textBoxUsername.Text, textBoxPassword.Text);
-                    Koneksi k2 = new Koneksi();
+                    //Users u = new Users(textBoxUsername.Text, textBoxPassword.Text);
+                    string status = Users.Login(textBoxUsername.Text, textBoxPassword.Text);
+                    if (status == "login")
+                    {
+                        MessageBox.Show("Connection successful. You can now use the program");
 
-                    MessageBox.Show("Connection successful. You can now use the program");
+                        FormMenu formMain = (FormMenu)this.Owner;
+                        formMain.Enabled = true;
 
-                    FormMenu formMain = (FormMenu)this.Owner;
-                    formMain.Enabled = true;
-
-                    this.Close();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username and Password incorrect");
+                    }
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Username cannot be empty");
+                    MessageBox.Show("Username and Password cannot be empty");
                 }
             }
             catch (Exception exc)

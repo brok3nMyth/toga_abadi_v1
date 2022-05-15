@@ -19,24 +19,22 @@ namespace TogaAbadiClassHitung
             KoneksiDB.ConnectionString = ConfigurationManager.ConnectionStrings["namakoneksi"].ConnectionString;
             this.Connect();
         }
-        public Koneksi(string namaServer, string namaDatabase, string username, string password)
+        public Koneksi(string namaServer, string namaDb, string username, string pass)
         {
-            string connectionStr;
-            if (password == "")
+            string strCon = "";
+            if (pass != "")
             {
-                connectionStr = "Server=" + namaServer + ";Database=" + namaDatabase + ";Uid=" + username + ";";
+                strCon = "Server=" + namaServer + ";Database=" + namaDb + ";Uid=" + username + ";Pwd=" + pass + ";Pooling=false;Connect Timeout=45;";
             }
             else
             {
-                connectionStr = "Server=" + namaServer + ";Database=" + namaDatabase + ";Uid=" + username + ";Pwd=" + password + ";";
+                strCon = "Server=" + namaServer + ";Database=" + namaDb + ";Uid=" + username + ";";
             }
 
             this.KoneksiDB = new MySqlConnection();
-            KoneksiDB.ConnectionString = connectionStr;
-
+            KoneksiDB.ConnectionString = strCon;
             this.Connect();
-
-            UpdateAppConfig(connectionStr);
+            UpdateAppConfig(strCon);
         }
         #endregion
 
@@ -68,6 +66,7 @@ namespace TogaAbadiClassHitung
             //Reload app.config pake pengaturan baru
             ConfigurationManager.RefreshSection("connectionStrings");
         }
+
         public static void JalankanPerintahDML(string pSql)
         {
             //Buat koneksi yang udah ada di app config

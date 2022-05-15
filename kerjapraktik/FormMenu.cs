@@ -21,6 +21,12 @@ namespace kerjapraktik
         {
             this.WindowState = FormWindowState.Maximized;
             this.IsMdiContainer = true;
+
+            this.Enabled = false;
+
+            FormLogin formLogin = new FormLogin();
+            formLogin.Owner = this;
+            formLogin.Show();
         }
 
         private void keluarToolStripMenuItem_Click(object sender, EventArgs e)

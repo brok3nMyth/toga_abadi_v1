@@ -141,6 +141,7 @@ namespace kerjapraktik
             this.Controls.Add(this.buttonLogin);
             this.Name = "FormLogin";
             this.Text = "Form Login";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
