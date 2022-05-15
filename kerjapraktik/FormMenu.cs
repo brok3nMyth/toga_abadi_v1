@@ -156,5 +156,21 @@ namespace kerjapraktik
                 form.BringToFront();
             }
         }
+
+        private void gajiToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormUbahGaji"];
+            if (form == null)
+            {
+                FormUbahGaji formUbahGaji = new FormUbahGaji();
+                formUbahGaji.MdiParent = this;
+                formUbahGaji.Show();
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
+        }
     }
 }

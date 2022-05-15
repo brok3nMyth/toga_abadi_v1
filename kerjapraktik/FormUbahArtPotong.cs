@@ -16,5 +16,21 @@ namespace kerjapraktik
         {
             InitializeComponent();
         }
+
+        private void buttonUbahBagian_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormBagian"];
+            if (form == null)
+            {
+                FormBagian formBagian = new FormBagian();
+                formBagian.MdiParent = this.MdiParent;
+                formBagian.Show();
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace kerjapraktik
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonTambahBagian = new System.Windows.Forms.Button();
+            this.buttonUbahBagian = new System.Windows.Forms.Button();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,25 +42,39 @@ namespace kerjapraktik
             this.dataGridViewData = new System.Windows.Forms.DataGridView();
             this.yard_kain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxBrand = new System.Windows.Forms.TextBox();
-            this.textBoxKodeArtikel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxArtikel = new System.Windows.Forms.ComboBox();
+            this.buttonUbah = new System.Windows.Forms.Button();
+            this.textBoxXL = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxS = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxL = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxM = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxYard = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxSeri = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonTambahBagian
+            // buttonUbahBagian
             // 
-            this.buttonTambahBagian.Location = new System.Drawing.Point(25, 444);
-            this.buttonTambahBagian.Name = "buttonTambahBagian";
-            this.buttonTambahBagian.Size = new System.Drawing.Size(134, 30);
-            this.buttonTambahBagian.TabIndex = 47;
-            this.buttonTambahBagian.Text = "Tambah Bagian";
-            this.buttonTambahBagian.UseVisualStyleBackColor = true;
+            this.buttonUbahBagian.Location = new System.Drawing.Point(25, 514);
+            this.buttonUbahBagian.Name = "buttonUbahBagian";
+            this.buttonUbahBagian.Size = new System.Drawing.Size(134, 30);
+            this.buttonUbahBagian.TabIndex = 47;
+            this.buttonUbahBagian.Text = "Ubah Bagian";
+            this.buttonUbahBagian.UseVisualStyleBackColor = true;
+            this.buttonUbahBagian.Click += new System.EventHandler(this.buttonUbahBagian_Click);
             // 
             // textBoxTotal
             // 
-            this.textBoxTotal.Location = new System.Drawing.Point(662, 446);
+            this.textBoxTotal.Location = new System.Drawing.Point(662, 516);
             this.textBoxTotal.Multiline = true;
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.Size = new System.Drawing.Size(99, 28);
@@ -101,7 +115,7 @@ namespace kerjapraktik
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(605, 454);
+            this.label5.Location = new System.Drawing.Point(605, 524);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 45;
@@ -127,7 +141,7 @@ namespace kerjapraktik
             this.sizeL,
             this.sizeXL,
             this.jumlah});
-            this.dataGridViewData.Location = new System.Drawing.Point(25, 155);
+            this.dataGridViewData.Location = new System.Drawing.Point(25, 225);
             this.dataGridViewData.Name = "dataGridViewData";
             this.dataGridViewData.Size = new System.Drawing.Size(736, 274);
             this.dataGridViewData.TabIndex = 42;
@@ -139,24 +153,16 @@ namespace kerjapraktik
             // 
             // textBoxBrand
             // 
-            this.textBoxBrand.Location = new System.Drawing.Point(79, 99);
+            this.textBoxBrand.Location = new System.Drawing.Point(87, 94);
             this.textBoxBrand.Multiline = true;
             this.textBoxBrand.Name = "textBoxBrand";
-            this.textBoxBrand.Size = new System.Drawing.Size(99, 28);
+            this.textBoxBrand.Size = new System.Drawing.Size(143, 28);
             this.textBoxBrand.TabIndex = 41;
-            // 
-            // textBoxKodeArtikel
-            // 
-            this.textBoxKodeArtikel.Location = new System.Drawing.Point(79, 60);
-            this.textBoxKodeArtikel.Multiline = true;
-            this.textBoxKodeArtikel.Name = "textBoxKodeArtikel";
-            this.textBoxKodeArtikel.Size = new System.Drawing.Size(99, 28);
-            this.textBoxKodeArtikel.TabIndex = 40;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 105);
+            this.label3.Location = new System.Drawing.Point(30, 100);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 39;
@@ -165,7 +171,7 @@ namespace kerjapraktik
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 68);
+            this.label2.Location = new System.Drawing.Point(29, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 38;
@@ -181,19 +187,152 @@ namespace kerjapraktik
             this.label1.TabIndex = 37;
             this.label1.Text = "ARTIKEL POTONG";
             // 
+            // comboBoxArtikel
+            // 
+            this.comboBoxArtikel.BackColor = System.Drawing.Color.Khaki;
+            this.comboBoxArtikel.FormattingEnabled = true;
+            this.comboBoxArtikel.Location = new System.Drawing.Point(87, 60);
+            this.comboBoxArtikel.Name = "comboBoxArtikel";
+            this.comboBoxArtikel.Size = new System.Drawing.Size(143, 21);
+            this.comboBoxArtikel.TabIndex = 48;
+            // 
+            // buttonUbah
+            // 
+            this.buttonUbah.Location = new System.Drawing.Point(662, 183);
+            this.buttonUbah.Name = "buttonUbah";
+            this.buttonUbah.Size = new System.Drawing.Size(99, 36);
+            this.buttonUbah.TabIndex = 49;
+            this.buttonUbah.Text = "UBAH";
+            this.buttonUbah.UseVisualStyleBackColor = true;
+            // 
+            // textBoxXL
+            // 
+            this.textBoxXL.Location = new System.Drawing.Point(374, 167);
+            this.textBoxXL.Multiline = true;
+            this.textBoxXL.Name = "textBoxXL";
+            this.textBoxXL.Size = new System.Drawing.Size(99, 28);
+            this.textBoxXL.TabIndex = 57;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(313, 170);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.TabIndex = 56;
+            this.label11.Text = "SIZE XL   : ";
+            // 
+            // textBoxS
+            // 
+            this.textBoxS.Location = new System.Drawing.Point(374, 60);
+            this.textBoxS.Multiline = true;
+            this.textBoxS.Name = "textBoxS";
+            this.textBoxS.Size = new System.Drawing.Size(99, 28);
+            this.textBoxS.TabIndex = 55;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(320, 68);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 54;
+            this.label8.Text = "SIZE S   :";
+            // 
+            // textBoxL
+            // 
+            this.textBoxL.Location = new System.Drawing.Point(374, 133);
+            this.textBoxL.Multiline = true;
+            this.textBoxL.Name = "textBoxL";
+            this.textBoxL.Size = new System.Drawing.Size(99, 28);
+            this.textBoxL.TabIndex = 53;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(320, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "SIZE L   : ";
+            // 
+            // textBoxM
+            // 
+            this.textBoxM.Location = new System.Drawing.Point(374, 96);
+            this.textBoxM.Multiline = true;
+            this.textBoxM.Name = "textBoxM";
+            this.textBoxM.Size = new System.Drawing.Size(99, 28);
+            this.textBoxM.TabIndex = 51;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(317, 102);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "SIZE M   : ";
+            // 
+            // textBoxYard
+            // 
+            this.textBoxYard.Location = new System.Drawing.Point(87, 164);
+            this.textBoxYard.Multiline = true;
+            this.textBoxYard.Name = "textBoxYard";
+            this.textBoxYard.Size = new System.Drawing.Size(143, 28);
+            this.textBoxYard.TabIndex = 60;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(19, 167);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "YARD KAIN :";
+            // 
+            // textBoxSeri
+            // 
+            this.textBoxSeri.Location = new System.Drawing.Point(87, 128);
+            this.textBoxSeri.Multiline = true;
+            this.textBoxSeri.Name = "textBoxSeri";
+            this.textBoxSeri.Size = new System.Drawing.Size(143, 28);
+            this.textBoxSeri.TabIndex = 58;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(43, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "SERI   : ";
+            // 
             // FormUbahArtPotong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 497);
-            this.Controls.Add(this.buttonTambahBagian);
+            this.ClientSize = new System.Drawing.Size(785, 559);
+            this.Controls.Add(this.textBoxSeri);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBoxYard);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBoxXL);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textBoxS);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBoxL);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBoxM);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.buttonUbah);
+            this.Controls.Add(this.comboBoxArtikel);
+            this.Controls.Add(this.buttonUbahBagian);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridViewData);
             this.Controls.Add(this.textBoxBrand);
-            this.Controls.Add(this.textBoxKodeArtikel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -207,7 +346,7 @@ namespace kerjapraktik
 
         #endregion
 
-        private System.Windows.Forms.Button buttonTambahBagian;
+        private System.Windows.Forms.Button buttonUbahBagian;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
@@ -220,9 +359,22 @@ namespace kerjapraktik
         private System.Windows.Forms.DataGridView dataGridViewData;
         private System.Windows.Forms.DataGridViewTextBoxColumn yard_kain;
         private System.Windows.Forms.TextBox textBoxBrand;
-        private System.Windows.Forms.TextBox textBoxKodeArtikel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxArtikel;
+        private System.Windows.Forms.Button buttonUbah;
+        private System.Windows.Forms.TextBox textBoxXL;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxS;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxL;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxM;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxYard;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxSeri;
+        private System.Windows.Forms.Label label6;
     }
 }

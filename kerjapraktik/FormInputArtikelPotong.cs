@@ -43,6 +43,7 @@ namespace kerjapraktik
 
             dataGridViewData.Columns.Add("Seri", "Seri");
             dataGridViewData.Columns.Add("Yard Kain", "Yard");
+            dataGridViewData.Columns.Add("Size S", "S");
             dataGridViewData.Columns.Add("Size M", "M");
             dataGridViewData.Columns.Add("Size L", "L");
             dataGridViewData.Columns.Add("Size XL", "XL");
@@ -50,6 +51,7 @@ namespace kerjapraktik
 
             dataGridViewData.Columns["Seri"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["Yard"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["S"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["M"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["L"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["XL"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -62,6 +64,11 @@ namespace kerjapraktik
       
             dataGridViewData.AllowUserToAddRows = true;
             dataGridViewData.ReadOnly = false;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
