@@ -25,7 +25,6 @@ namespace kerjapraktik
                 Koneksi k = new Koneksi("localhost", "toga_abadi_v1", "root", ""); // "superadmin", "WXWdh41aYBKzi15R"); //'root','' 
                 Koneksi k2 = new Koneksi();
 
-                MessageBox.Show("Koneksi berhasil","Informasi");
             }
             catch (Exception exc)
             {

@@ -41,7 +41,7 @@ namespace kerjapraktik
             this.sizeL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeXL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jumlah = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxKain = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -153,14 +153,14 @@ namespace kerjapraktik
             this.jumlah.HeaderText = "Jumlah";
             this.jumlah.Name = "jumlah";
             // 
-            // textBox1
+            // textBoxKain
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Khaki;
-            this.textBox1.Location = new System.Drawing.Point(649, 56);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(99, 28);
-            this.textBox1.TabIndex = 33;
+            this.textBoxKain.BackColor = System.Drawing.Color.Khaki;
+            this.textBoxKain.Location = new System.Drawing.Point(649, 56);
+            this.textBoxKain.Multiline = true;
+            this.textBoxKain.Name = "textBoxKain";
+            this.textBoxKain.Size = new System.Drawing.Size(99, 28);
+            this.textBoxKain.TabIndex = 33;
             // 
             // label4
             // 
@@ -331,7 +331,7 @@ namespace kerjapraktik
             this.Controls.Add(this.buttonTambahBagian);
             this.Controls.Add(this.textBoxTotal);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxKain);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridViewData);
             this.Controls.Add(this.textBoxBrand);
@@ -362,7 +362,7 @@ namespace kerjapraktik
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeL;
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeXL;
         private System.Windows.Forms.DataGridViewTextBoxColumn jumlah;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxKain;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label label5;

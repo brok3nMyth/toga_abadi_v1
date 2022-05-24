@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TogaAbadiClassHitung;
 
 namespace kerjapraktik
 {
@@ -36,17 +37,22 @@ namespace kerjapraktik
         private void FormInputArtikelPotong_Load(object sender, EventArgs e)
         {
             FormatDataGrid();
+            textBoxYard.Text = "0";
+            textBoxS.Text = "0";
+            textBoxM.Text = "0";
+            textBoxL.Text = "0";
+            textBoxXL.Text = "0";
         }
         private void FormatDataGrid()
         {
             dataGridViewData.Columns.Clear();
 
             dataGridViewData.Columns.Add("Seri", "Seri");
-            dataGridViewData.Columns.Add("Yard Kain", "Yard");
-            dataGridViewData.Columns.Add("Size S", "S");
-            dataGridViewData.Columns.Add("Size M", "M");
-            dataGridViewData.Columns.Add("Size L", "L");
-            dataGridViewData.Columns.Add("Size XL", "XL");
+            dataGridViewData.Columns.Add("Yard", "Yard Kain");
+            dataGridViewData.Columns.Add("S", "Size S");
+            dataGridViewData.Columns.Add("M", "Size M");
+            dataGridViewData.Columns.Add("L", "Size L");
+            dataGridViewData.Columns.Add("XL", "Size XL");
             dataGridViewData.Columns.Add("Jumlah", "Jumlah");
 
             dataGridViewData.Columns["Seri"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -68,7 +74,43 @@ namespace kerjapraktik
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            try
+            {
+                bool filled = CheckFill();
+                if (filled = true)
+                {
+                    string kodeAP =  ArtikelPotongs.GenerateKode(textBoxKodeArtikel.Text);
+                    string brand = textBoxBrand.Text;
+                    string kain = textBoxKain.Text;
+                    string seri = textBoxSeri.Text;
+                    int yard = int.Parse(textBoxYard.Text);
+                    int s = int.Parse(textBoxS.Text);
+                    int m = int.Parse(textBoxM.Text);
+                    int l = int.Parse(textBoxL.Text);
+                    int xl = int.Parse(textBoxXL.Text);
+                    ArtikelPotongs ap = new ArtikelPotongs(kodeAP,brand,kain,seri,yard,s,m,l,xl);
 
+                    ArtikelPotongs.TambahData(ap);
+                }
+                else
+                {
+                    MessageBox.Show("Textbox cannot be Empty");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        private bool CheckFill()
+        {
+            bool filled= false;
+            if (textBoxKodeArtikel.Text !=""&& textBoxBrand.Text !="" && textBoxKain.Text !="" &&textBoxSeri.Text !="")
+            {
+                filled = true;
+            }
+            return filled;
         }
     }
 }
