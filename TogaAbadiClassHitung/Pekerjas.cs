@@ -42,6 +42,11 @@ namespace TogaAbadiClassHitung
 
             Koneksi.JalankanPerintahDML(sql);
         }
+        public static void UbahData(Pekerjas parPekerjas)
+        {
+            string sql = "Update kategori set Nama='" + parPekerjas.Nama.Replace("'", "\\'") + "' where idPekerjas='" + parPekerjas.idPekerjas + "'";
+            Koneksi.JalankanPerintahDML(sql);
+        }
         public static List<Pekerjas> BacaData(string kriteria, string nilaiKriteria)
         {
             string sql = "";

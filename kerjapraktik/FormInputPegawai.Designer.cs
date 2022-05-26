@@ -51,6 +51,7 @@ namespace kerjapraktik
             this.buttonSimpan.TabIndex = 35;
             this.buttonSimpan.Text = "SIMPAN";
             this.buttonSimpan.UseVisualStyleBackColor = false;
+            this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
             // 
             // buttonKeluar
             // 
@@ -63,6 +64,7 @@ namespace kerjapraktik
             this.buttonKeluar.TabIndex = 37;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // labelWarna
             // 

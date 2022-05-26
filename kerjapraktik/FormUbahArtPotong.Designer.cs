@@ -31,7 +31,7 @@ namespace kerjapraktik
         {
             this.buttonUbahBagian = new System.Windows.Forms.Button();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxKain = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.jumlah = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeXL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,13 +80,13 @@ namespace kerjapraktik
             this.textBoxTotal.Size = new System.Drawing.Size(99, 28);
             this.textBoxTotal.TabIndex = 46;
             // 
-            // textBox1
+            // textBoxKain
             // 
-            this.textBox1.Location = new System.Drawing.Point(662, 60);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(99, 28);
-            this.textBox1.TabIndex = 44;
+            this.textBoxKain.Location = new System.Drawing.Point(662, 60);
+            this.textBoxKain.Multiline = true;
+            this.textBoxKain.Name = "textBoxKain";
+            this.textBoxKain.Size = new System.Drawing.Size(99, 28);
+            this.textBoxKain.TabIndex = 44;
             // 
             // label4
             // 
@@ -195,6 +195,7 @@ namespace kerjapraktik
             this.comboBoxArtikel.Name = "comboBoxArtikel";
             this.comboBoxArtikel.Size = new System.Drawing.Size(143, 21);
             this.comboBoxArtikel.TabIndex = 48;
+            this.comboBoxArtikel.SelectedIndexChanged += new System.EventHandler(this.comboBoxArtikel_SelectedIndexChanged);
             // 
             // buttonUbah
             // 
@@ -204,6 +205,7 @@ namespace kerjapraktik
             this.buttonUbah.TabIndex = 49;
             this.buttonUbah.Text = "UBAH";
             this.buttonUbah.UseVisualStyleBackColor = true;
+            this.buttonUbah.Click += new System.EventHandler(this.buttonUbah_Click);
             // 
             // textBoxXL
             // 
@@ -328,7 +330,7 @@ namespace kerjapraktik
             this.Controls.Add(this.comboBoxArtikel);
             this.Controls.Add(this.buttonUbahBagian);
             this.Controls.Add(this.textBoxTotal);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxKain);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridViewData);
@@ -338,6 +340,7 @@ namespace kerjapraktik
             this.Controls.Add(this.label1);
             this.Name = "FormUbahArtPotong";
             this.Text = "FormUbahArtPotong";
+            this.Load += new System.EventHandler(this.FormUbahArtPotong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -348,7 +351,7 @@ namespace kerjapraktik
 
         private System.Windows.Forms.Button buttonUbahBagian;
         private System.Windows.Forms.TextBox textBoxTotal;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxKain;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn jumlah;
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeXL;

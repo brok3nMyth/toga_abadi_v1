@@ -34,10 +34,10 @@ namespace kerjapraktik
             this.buttonSimpan = new System.Windows.Forms.Button();
             this.labelNama = new System.Windows.Forms.Label();
             this.textBoxNama = new System.Windows.Forms.TextBox();
-            this.textBoxId = new System.Windows.Forms.TextBox();
             this.labelId = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonHapus = new System.Windows.Forms.Button();
+            this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,7 @@ namespace kerjapraktik
             this.buttonKeluar.TabIndex = 41;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // buttonSimpan
             // 
@@ -76,6 +77,7 @@ namespace kerjapraktik
             this.buttonSimpan.TabIndex = 40;
             this.buttonSimpan.Text = "SIMPAN";
             this.buttonSimpan.UseVisualStyleBackColor = false;
+            this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
             // 
             // labelNama
             // 
@@ -96,14 +98,6 @@ namespace kerjapraktik
             this.textBoxNama.Size = new System.Drawing.Size(279, 30);
             this.textBoxNama.TabIndex = 25;
             // 
-            // textBoxId
-            // 
-            this.textBoxId.Location = new System.Drawing.Point(146, 25);
-            this.textBoxId.Multiline = true;
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(56, 28);
-            this.textBoxId.TabIndex = 23;
-            // 
             // labelId
             // 
             this.labelId.AutoSize = true;
@@ -119,9 +113,9 @@ namespace kerjapraktik
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.comboBoxPegawai);
             this.panel1.Controls.Add(this.labelNama);
             this.panel1.Controls.Add(this.textBoxNama);
-            this.panel1.Controls.Add(this.textBoxId);
             this.panel1.Controls.Add(this.labelId);
             this.panel1.Location = new System.Drawing.Point(3, 62);
             this.panel1.Name = "panel1";
@@ -139,6 +133,16 @@ namespace kerjapraktik
             this.buttonHapus.TabIndex = 43;
             this.buttonHapus.Text = "HAPUS";
             this.buttonHapus.UseVisualStyleBackColor = false;
+            this.buttonHapus.Click += new System.EventHandler(this.buttonHapus_Click);
+            // 
+            // comboBoxPegawai
+            // 
+            this.comboBoxPegawai.FormattingEnabled = true;
+            this.comboBoxPegawai.Location = new System.Drawing.Point(146, 21);
+            this.comboBoxPegawai.Name = "comboBoxPegawai";
+            this.comboBoxPegawai.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPegawai.TabIndex = 27;
+            this.comboBoxPegawai.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // FormUbahPegawai
             // 
@@ -152,6 +156,7 @@ namespace kerjapraktik
             this.Controls.Add(this.panel1);
             this.Name = "FormUbahPegawai";
             this.Text = "FormUbahPegawai";
+            this.Load += new System.EventHandler(this.FormUbahPegawai_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -165,9 +170,9 @@ namespace kerjapraktik
         private System.Windows.Forms.Button buttonSimpan;
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.TextBox textBoxNama;
-        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label labelId;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonHapus;
+        private System.Windows.Forms.ComboBox comboBoxPegawai;
     }
 }
