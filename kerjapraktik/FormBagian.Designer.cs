@@ -67,6 +67,7 @@ namespace kerjapraktik
             this.comboBoxBagian.Name = "comboBoxBagian";
             this.comboBoxBagian.Size = new System.Drawing.Size(144, 21);
             this.comboBoxBagian.TabIndex = 2;
+            this.comboBoxBagian.SelectedIndexChanged += new System.EventHandler(this.comboBoxBagian_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -101,6 +102,7 @@ namespace kerjapraktik
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // dataGridView1
             // 
@@ -138,6 +140,7 @@ namespace kerjapraktik
             this.Controls.Add(this.textBoxIDArt);
             this.Name = "FormBagian";
             this.Text = "Form Bagian";
+            this.Load += new System.EventHandler(this.FormBagian_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
