@@ -107,6 +107,11 @@ namespace TogaAbadiClassHitung
             return hasilKode;
         }
 
+        public static int HitungTotalOrder(ArtikelPotongs ap)
+        {
+            int total = ap.Size_S + ap.Size_M + ap.Size_L + ap.Size_XL;
+            return total;
+        }
         #endregion
     }
 }

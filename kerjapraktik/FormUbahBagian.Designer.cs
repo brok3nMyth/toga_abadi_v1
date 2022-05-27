@@ -50,7 +50,7 @@ namespace kerjapraktik
             this.Biaya});
             this.dataGridView1.Location = new System.Drawing.Point(12, 128);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(233, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(315, 223);
             this.dataGridView1.TabIndex = 15;
             // 
             // Bagian
@@ -100,9 +100,33 @@ namespace kerjapraktik
             // comboBoxBagian
             // 
             this.comboBoxBagian.FormattingEnabled = true;
+            this.comboBoxBagian.Items.AddRange(new object[] {
+            "Gosok krah",
+            "",
+            "Krah ",
+            "",
+            "Badan (include badan depan, belakang, skaur, jahit tangan) ",
+            "",
+            "Roges",
+            "",
+            "Obras tangan",
+            "",
+            "Tindes tangan",
+            "",
+            "Make up",
+            "",
+            "Lipat bawah",
+            "",
+            "Naskat",
+            "",
+            "Kancing",
+            "",
+            "Bersih benang",
+            "",
+            "Gosok"});
             this.comboBoxBagian.Location = new System.Drawing.Point(65, 49);
             this.comboBoxBagian.Name = "comboBoxBagian";
-            this.comboBoxBagian.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxBagian.Size = new System.Drawing.Size(262, 21);
             this.comboBoxBagian.TabIndex = 10;
             // 
             // label1
@@ -127,7 +151,7 @@ namespace kerjapraktik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 290);
+            this.ClientSize = new System.Drawing.Size(350, 378);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxHarga);
@@ -138,6 +162,7 @@ namespace kerjapraktik
             this.Controls.Add(this.textBoxIDArt);
             this.Name = "FormUbahBagian";
             this.Text = "FormUbahBagian";
+            this.Load += new System.EventHandler(this.FormUbahBagian_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

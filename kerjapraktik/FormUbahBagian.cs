@@ -16,5 +16,10 @@ namespace kerjapraktik
         {
             InitializeComponent();
         }
+
+        private void FormUbahBagian_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

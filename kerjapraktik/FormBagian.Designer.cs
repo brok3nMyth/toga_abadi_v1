@@ -63,9 +63,33 @@ namespace kerjapraktik
             // comboBoxBagian
             // 
             this.comboBoxBagian.FormattingEnabled = true;
+            this.comboBoxBagian.Items.AddRange(new object[] {
+            "Gosok krah",
+            "",
+            "Krah ",
+            "",
+            "Badan (include badan depan, belakang, skaur, jahit tangan) ",
+            "",
+            "Roges",
+            "",
+            "Obras tangan",
+            "",
+            "Tindes tangan",
+            "",
+            "Make up",
+            "",
+            "Lipat bawah",
+            "",
+            "Naskat",
+            "",
+            "Kancing",
+            "",
+            "Bersih benang",
+            "",
+            "Gosok"});
             this.comboBoxBagian.Location = new System.Drawing.Point(68, 51);
             this.comboBoxBagian.Name = "comboBoxBagian";
-            this.comboBoxBagian.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxBagian.Size = new System.Drawing.Size(276, 21);
             this.comboBoxBagian.TabIndex = 2;
             this.comboBoxBagian.SelectedIndexChanged += new System.EventHandler(this.comboBoxBagian_SelectedIndexChanged);
             // 
@@ -112,7 +136,7 @@ namespace kerjapraktik
             this.Biaya});
             this.dataGridView1.Location = new System.Drawing.Point(15, 130);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(233, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(329, 249);
             this.dataGridView1.TabIndex = 7;
             // 
             // Bagian
@@ -129,7 +153,7 @@ namespace kerjapraktik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 290);
+            this.ClientSize = new System.Drawing.Size(356, 391);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxHarga);

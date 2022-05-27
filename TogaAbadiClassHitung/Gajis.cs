@@ -119,6 +119,18 @@ namespace TogaAbadiClassHitung
             }
             return listGajis;
         }
+        public static int HitungGaji(Gajis g)
+        {
+            int Subtotal = g.Subtotal;
+            int SisaKasbon = g.SisaKasbon;
+            int Kasbon = g.Kasbon;
+            int TotalKasbon = g.TotalKasbon;
+            int PotonganKasbon = g.PotonganKasbon;
+            int gaji = Subtotal - ((SisaKasbon + Kasbon)-PotonganKasbon);//perlu di improve
+
+
+            return gaji;
+        }
         #endregion
     }
 }

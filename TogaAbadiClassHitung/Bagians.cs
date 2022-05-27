@@ -32,6 +32,12 @@ namespace TogaAbadiClassHitung
             Tersedia = tersedia;
             Biaya_Satuan = biaya_Satuan;
         }
+        public Bagians( string bagian, int tersedia, int biaya_Satuan)
+        {
+            Bagian = bagian;
+            Tersedia = tersedia;
+            Biaya_Satuan = biaya_Satuan;
+        }
 
         #endregion
 
@@ -44,9 +50,9 @@ namespace TogaAbadiClassHitung
 
         #endregion
         #region method
-        public static void TambahData(Bagians parBagians)
+        public static void TambahData(Bagians parBagians, string kodeAp)
         {
-            string sql = "INSERT INTO Bagians(Bagians, Tersedia, biaya_Satuan) values ('" + parBagians.Bagian+ "', '" + parBagians.Tersedia+ "', '" + parBagians.Biaya_Satuan+ "')";
+            string sql = "INSERT INTO Bagians(id_artikel, Bagians, Tersedia, biaya_Satuan) values ('"+kodeAp+"','"+ parBagians.Bagian+ "', '" + parBagians.Tersedia+ "', '" + parBagians.Biaya_Satuan+ "')";
 
             Koneksi.JalankanPerintahDML(sql);
         }
