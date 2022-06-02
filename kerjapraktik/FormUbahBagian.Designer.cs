@@ -29,7 +29,7 @@ namespace kerjapraktik
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewData = new System.Windows.Forms.DataGridView();
             this.Bagian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Biaya = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -39,19 +39,19 @@ namespace kerjapraktik
             this.comboBoxBagian = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxIDArt = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Bagian,
             this.Biaya});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 128);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(315, 223);
-            this.dataGridView1.TabIndex = 15;
+            this.dataGridViewData.Location = new System.Drawing.Point(12, 128);
+            this.dataGridViewData.Name = "dataGridViewData";
+            this.dataGridViewData.Size = new System.Drawing.Size(315, 223);
+            this.dataGridViewData.TabIndex = 15;
             // 
             // Bagian
             // 
@@ -102,27 +102,16 @@ namespace kerjapraktik
             this.comboBoxBagian.FormattingEnabled = true;
             this.comboBoxBagian.Items.AddRange(new object[] {
             "Gosok krah",
-            "",
             "Krah ",
-            "",
             "Badan (include badan depan, belakang, skaur, jahit tangan) ",
-            "",
             "Roges",
-            "",
             "Obras tangan",
-            "",
             "Tindes tangan",
-            "",
             "Make up",
-            "",
             "Lipat bawah",
-            "",
             "Naskat",
-            "",
             "Kancing",
-            "",
             "Bersih benang",
-            "",
             "Gosok"});
             this.comboBoxBagian.Location = new System.Drawing.Point(65, 49);
             this.comboBoxBagian.Name = "comboBoxBagian";
@@ -152,7 +141,7 @@ namespace kerjapraktik
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 378);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewData);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxHarga);
             this.Controls.Add(this.label3);
@@ -163,7 +152,7 @@ namespace kerjapraktik
             this.Name = "FormUbahBagian";
             this.Text = "FormUbahBagian";
             this.Load += new System.EventHandler(this.FormUbahBagian_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,7 +160,7 @@ namespace kerjapraktik
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bagian;
         private System.Windows.Forms.DataGridViewTextBoxColumn Biaya;
         private System.Windows.Forms.Button buttonAdd;

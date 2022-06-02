@@ -61,6 +61,7 @@ namespace kerjapraktik
             this.Controls.Add(this.dataGridViewData);
             this.Name = "FormShowArtPotong";
             this.Text = "FormShowArtPotong";
+            this.Load += new System.EventHandler(this.FormShowArtPotong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

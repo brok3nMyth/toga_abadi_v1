@@ -22,8 +22,10 @@ namespace kerjapraktik
 
         private void FormBagian_Load(object sender, EventArgs e)
         {
-            comboBoxBagian.DataSource = listbagian;
-            comboBoxBagian.DisplayMember = "bagian";
+            //comboBoxBagian.DataSource = listbagian;
+            //comboBoxBagian.DisplayMember = "bagian";
+            FormatDataGrid();
+            TampilDataGrid(); 
         }
 
         private void comboBoxBagian_SelectedIndexChanged(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace kerjapraktik
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             Bagians selectedBagians = (Bagians)comboBoxBagian.SelectedItem;
-            string bagian = comboBoxBagian.SelectedValue.ToString();
+            string bagian = comboBoxBagian.Text.ToString();
             string kodeAp = textBoxIDArt.Text;
             int biaya = int.Parse(textBoxHarga.Text);
             listAp = ArtikelPotongs.BacaData("id", kodeAp);
@@ -53,6 +55,37 @@ namespace kerjapraktik
             Bagians b = new Bagians(bagian,ketersediaan,biaya);
             //ubah data
             Bagians.TambahData(b,kodeAp);
+        }
+        private void FormatDataGrid()
+        {
+            dataGridViewData.Columns.Clear();
+
+            dataGridViewData.Columns.Add("bagian", "Bagian");
+            dataGridViewData.Columns.Add("harga", "Harga");
+
+            dataGridViewData.Columns["bagian"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["harga"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            /* dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
+             dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";*/
+
+            dataGridViewData.AllowUserToAddRows = true;
+            dataGridViewData.ReadOnly = false;
+        }
+        private void TampilDataGrid()
+        {
+            if (listbagian.Count > 0)
+            {
+                dataGridViewData.Rows.Clear();
+                foreach (Bagians b in listbagian)
+                {
+                    dataGridViewData.Rows.Add(b.Bagian, b.Biaya_Satuan);
+                }
+            }
+            else
+            {
+                dataGridViewData.DataSource = null;
+            }
         }
     }
 }

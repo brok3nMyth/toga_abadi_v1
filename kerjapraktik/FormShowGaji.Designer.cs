@@ -61,6 +61,7 @@ namespace kerjapraktik
             this.Controls.Add(this.dataGridViewData);
             this.Name = "FormShowGaji";
             this.Text = "FormShowGaji";
+            this.Load += new System.EventHandler(this.FormShowGaji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

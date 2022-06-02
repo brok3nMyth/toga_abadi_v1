@@ -102,9 +102,11 @@ namespace TogaAbadiClassHitung
 
         public static string GenerateKode(string kode)
         {
-            string date = DateTime.Now.ToString("MM/dd/yyyy");
-            string hasilKode = kode +"-"+ date.Replace("/", "-");// L001-11-05-22
-            return hasilKode;
+            string date = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+            string hasilKode1 = kode +"-"+ date.Replace("/", "-");// L001-11-05-22 05:02:50
+            string hasilKode2 = hasilKode1.Replace(":", "-");// L001-11-05-22 05-02-50
+            string hasilKode3 = hasilKode2.Replace(" ", "-");// L001-11-05-22-05-02-50
+            return hasilKode3;
         }
 
         public static int HitungTotalOrder(ArtikelPotongs ap)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TogaAbadiClassHitung;
 
 namespace kerjapraktik
 {
@@ -15,6 +16,43 @@ namespace kerjapraktik
         public FormShowPegawai()
         {
             InitializeComponent();
+        }
+        List<Pekerjas> listp = new List<Pekerjas>();
+        private void FormShowPegawai_Load(object sender, EventArgs e)
+        {
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+        private void FormatDataGrid()
+        {
+            dataGridViewData.Columns.Clear();
+
+            dataGridViewData.Columns.Add("id", "Id");
+            dataGridViewData.Columns.Add("nama", "Nama");
+
+            dataGridViewData.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            /* dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
+             dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";*/
+
+            dataGridViewData.AllowUserToAddRows = true;
+            dataGridViewData.ReadOnly = false;
+        }
+        private void TampilDataGrid()
+        {
+            if (listp.Count > 0)
+            {
+                dataGridViewData.Rows.Clear();
+                foreach (Pekerjas p in listp)
+                {
+                    dataGridViewData.Rows.Add(p.IdPekerjas,p.Nama);
+                }
+            }
+            else
+            {
+                dataGridViewData.DataSource = null;
+            }
         }
     }
 }

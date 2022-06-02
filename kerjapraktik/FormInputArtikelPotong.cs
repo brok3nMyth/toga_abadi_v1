@@ -17,7 +17,7 @@ namespace kerjapraktik
         {
             InitializeComponent();
         }
-
+        List<ArtikelPotongs> listap = new List<ArtikelPotongs>();
         private void buttonTambahBagian_Click(object sender, EventArgs e)
         {
             Form form = Application.OpenForms["FormBagian"];
@@ -33,7 +33,22 @@ namespace kerjapraktik
                 form.BringToFront();
             }
         }
-
+        private void TampilDataGrid()
+        {
+            if (listap.Count > 0)
+            {
+                dataGridViewData.Rows.Clear();
+                foreach (ArtikelPotongs ap in listap)
+                {
+                    int jumlahsize = ap.Size_S + ap.Size_M + ap.Size_L + ap.Size_XL;
+                    dataGridViewData.Rows.Add(ap.Seri,ap.Yard,ap.Size_S,ap.Size_M,ap.Size_L,ap.Size_XL,jumlahsize);
+                }
+            }
+            else
+            {
+                dataGridViewData.DataSource = null;
+            }
+        }
         private void FormInputArtikelPotong_Load(object sender, EventArgs e)
         {
             FormatDataGrid();
@@ -91,6 +106,12 @@ namespace kerjapraktik
                     ArtikelPotongs ap = new ArtikelPotongs(kodeAP,brand,kain,seri,yard,s,m,l,xl);
 
                     ArtikelPotongs.TambahData(ap);
+                    Clear();
+
+                    listap = ArtikelPotongs.BacaData("id", kodeAP);
+
+                    TampilDataGrid();
+
                 }
                 else
                 {
@@ -111,6 +132,19 @@ namespace kerjapraktik
                 filled = true;
             }
             return filled;
+        }
+        private void Clear()
+        {
+            textBoxSeri.Clear();
+            textBoxYard.Clear();
+            textBoxS.Clear();
+            textBoxM.Clear();
+            textBoxL.Clear();
+            textBoxXL.Clear();
+        }
+        private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

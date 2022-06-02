@@ -7,21 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TogaAbadiClassHitung;
 
-namespace kerjapraktik
+namespace formgaji
 {
-    public partial class FormShowGajiDetail : Form
+    public partial class Form1 : Form
     {
-        public FormShowGajiDetail()
+        public Form1()
         {
             InitializeComponent();
         }
-        
-        private void FormShowGajiDetail_Load(object sender, EventArgs e)
-        {
-
-        }
-        
     }
 }

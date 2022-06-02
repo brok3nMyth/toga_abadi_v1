@@ -36,8 +36,9 @@ namespace kerjapraktik
             this.textBoxNama = new System.Windows.Forms.TextBox();
             this.labelId = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonHapus = new System.Windows.Forms.Button();
             this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
+            this.buttonHapus = new System.Windows.Forms.Button();
+            this.buttonCheck = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +114,7 @@ namespace kerjapraktik
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.buttonCheck);
             this.panel1.Controls.Add(this.comboBoxPegawai);
             this.panel1.Controls.Add(this.labelNama);
             this.panel1.Controls.Add(this.textBoxNama);
@@ -121,6 +123,15 @@ namespace kerjapraktik
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 122);
             this.panel1.TabIndex = 39;
+            // 
+            // comboBoxPegawai
+            // 
+            this.comboBoxPegawai.FormattingEnabled = true;
+            this.comboBoxPegawai.Location = new System.Drawing.Point(146, 21);
+            this.comboBoxPegawai.Name = "comboBoxPegawai";
+            this.comboBoxPegawai.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPegawai.TabIndex = 27;
+            this.comboBoxPegawai.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // buttonHapus
             // 
@@ -135,14 +146,18 @@ namespace kerjapraktik
             this.buttonHapus.UseVisualStyleBackColor = false;
             this.buttonHapus.Click += new System.EventHandler(this.buttonHapus_Click);
             // 
-            // comboBoxPegawai
+            // buttonCheck
             // 
-            this.comboBoxPegawai.FormattingEnabled = true;
-            this.comboBoxPegawai.Location = new System.Drawing.Point(146, 21);
-            this.comboBoxPegawai.Name = "comboBoxPegawai";
-            this.comboBoxPegawai.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPegawai.TabIndex = 27;
-            this.comboBoxPegawai.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.buttonCheck.BackColor = System.Drawing.Color.White;
+            this.buttonCheck.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCheck.ForeColor = System.Drawing.Color.Red;
+            this.buttonCheck.Location = new System.Drawing.Point(305, 14);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(120, 32);
+            this.buttonCheck.TabIndex = 42;
+            this.buttonCheck.Text = "CHECK";
+            this.buttonCheck.UseVisualStyleBackColor = false;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
             // FormUbahPegawai
             // 
@@ -174,5 +189,6 @@ namespace kerjapraktik
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonHapus;
         private System.Windows.Forms.ComboBox comboBoxPegawai;
+        private System.Windows.Forms.Button buttonCheck;
     }
 }
