@@ -59,6 +59,7 @@ namespace kerjapraktik
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxSeri = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.buttonCari = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,7 +194,7 @@ namespace kerjapraktik
             this.comboBoxArtikel.FormattingEnabled = true;
             this.comboBoxArtikel.Location = new System.Drawing.Point(87, 60);
             this.comboBoxArtikel.Name = "comboBoxArtikel";
-            this.comboBoxArtikel.Size = new System.Drawing.Size(143, 21);
+            this.comboBoxArtikel.Size = new System.Drawing.Size(194, 21);
             this.comboBoxArtikel.TabIndex = 48;
             this.comboBoxArtikel.SelectedIndexChanged += new System.EventHandler(this.comboBoxArtikel_SelectedIndexChanged);
             // 
@@ -209,7 +210,7 @@ namespace kerjapraktik
             // 
             // textBoxXL
             // 
-            this.textBoxXL.Location = new System.Drawing.Point(374, 167);
+            this.textBoxXL.Location = new System.Drawing.Point(427, 169);
             this.textBoxXL.Multiline = true;
             this.textBoxXL.Name = "textBoxXL";
             this.textBoxXL.Size = new System.Drawing.Size(99, 28);
@@ -218,7 +219,7 @@ namespace kerjapraktik
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(313, 170);
+            this.label11.Location = new System.Drawing.Point(366, 172);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 13);
             this.label11.TabIndex = 56;
@@ -226,7 +227,7 @@ namespace kerjapraktik
             // 
             // textBoxS
             // 
-            this.textBoxS.Location = new System.Drawing.Point(374, 60);
+            this.textBoxS.Location = new System.Drawing.Point(427, 62);
             this.textBoxS.Multiline = true;
             this.textBoxS.Name = "textBoxS";
             this.textBoxS.Size = new System.Drawing.Size(99, 28);
@@ -235,7 +236,7 @@ namespace kerjapraktik
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(320, 68);
+            this.label8.Location = new System.Drawing.Point(373, 70);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 54;
@@ -243,7 +244,7 @@ namespace kerjapraktik
             // 
             // textBoxL
             // 
-            this.textBoxL.Location = new System.Drawing.Point(374, 133);
+            this.textBoxL.Location = new System.Drawing.Point(427, 135);
             this.textBoxL.Multiline = true;
             this.textBoxL.Name = "textBoxL";
             this.textBoxL.Size = new System.Drawing.Size(99, 28);
@@ -252,7 +253,7 @@ namespace kerjapraktik
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(320, 138);
+            this.label9.Location = new System.Drawing.Point(373, 140);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 13);
             this.label9.TabIndex = 52;
@@ -260,7 +261,7 @@ namespace kerjapraktik
             // 
             // textBoxM
             // 
-            this.textBoxM.Location = new System.Drawing.Point(374, 96);
+            this.textBoxM.Location = new System.Drawing.Point(427, 98);
             this.textBoxM.Multiline = true;
             this.textBoxM.Name = "textBoxM";
             this.textBoxM.Size = new System.Drawing.Size(99, 28);
@@ -269,7 +270,7 @@ namespace kerjapraktik
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(317, 102);
+            this.label10.Location = new System.Drawing.Point(370, 104);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 50;
@@ -309,11 +310,22 @@ namespace kerjapraktik
             this.label6.TabIndex = 61;
             this.label6.Text = "SERI   : ";
             // 
+            // buttonCari
+            // 
+            this.buttonCari.Location = new System.Drawing.Point(287, 62);
+            this.buttonCari.Name = "buttonCari";
+            this.buttonCari.Size = new System.Drawing.Size(80, 21);
+            this.buttonCari.TabIndex = 62;
+            this.buttonCari.Text = "Cari";
+            this.buttonCari.UseVisualStyleBackColor = true;
+            this.buttonCari.Click += new System.EventHandler(this.buttonCari_Click);
+            // 
             // FormUbahArtPotong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 559);
+            this.Controls.Add(this.buttonCari);
             this.Controls.Add(this.textBoxSeri);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxYard);
@@ -379,5 +391,6 @@ namespace kerjapraktik
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxSeri;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonCari;
     }
 }

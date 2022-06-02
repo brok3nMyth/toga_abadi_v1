@@ -12,10 +12,7 @@ namespace TogaAbadiClassHitung
         private int idGaji;
         private int diambil;
         private int subtotal;
-        private int sisaKasbon;
         private int kasbon;
-        private int totalKasbon;
-        private int potonganKasbon;
         private int totalGaji;
         private Pekerjas pekerjas;
         private Bagians bagians;
@@ -25,15 +22,12 @@ namespace TogaAbadiClassHitung
 
         #endregion
         #region constructor
-        public Gajis(int idGaji, int diambil, int subtotal, int sisaKasbon, int kasbon, int totalKasbon, int potonganKasbon, int totalGaji, Pekerjas pekerjas, Bagians bagians)
+        public Gajis(int idGaji, int diambil, int subtotal, int kasbon, int totalGaji, Pekerjas pekerjas, Bagians bagians)
         {
             IdGaji = idGaji;
             Diambil = diambil;
             Subtotal = subtotal;
-            SisaKasbon = sisaKasbon;
             Kasbon = kasbon;
-            TotalKasbon = totalKasbon;
-            PotonganKasbon = potonganKasbon;
             TotalGaji = totalGaji;
             Pekerjas = pekerjas;
             Bagians = bagians;
@@ -58,19 +52,16 @@ namespace TogaAbadiClassHitung
         public int IdGaji { get => idGaji; set => idGaji = value; }
         public int Diambil { get => diambil; set => diambil = value; }
         public int Subtotal { get => subtotal; set => subtotal = value; }
-        public int SisaKasbon { get => sisaKasbon; set => sisaKasbon = value; }
         public int Kasbon { get => kasbon; set => kasbon = value; }
-        public int TotalKasbon { get => totalKasbon; set => totalKasbon = value; }
-        public int PotonganKasbon { get => potonganKasbon; set => potonganKasbon = value; }
         public int TotalGaji { get => totalGaji; set => totalGaji = value; }
         #endregion
 
         #region method
         public static void TambahData(Gajis parGajis)
         {
-            string sql = "INSERT INTO Gajis(pekerjas_id,models_id,diambil,subtotal,sisaKasbon,kasbon,totalKasbon,potonganKasbon,totalGaji) values ('" 
-                + parGajis.Pekerjas.IdPekerjas + "', '" + parGajis.Bagians.IdBagians + "', '" + parGajis.Diambil + "', '" +parGajis.Subtotal + "', '" +parGajis.SisaKasbon+ "', '" +
-                parGajis.Kasbon+ "', '" +parGajis.TotalKasbon + "', '" +parGajis.PotonganKasbon+ "', '" +parGajis.TotalGaji+ "')";
+            string sql = "INSERT INTO Gajis(pekerjas_id,models_id,diambil,subtotal,kasbon,totalGaji) values ('" 
+                + parGajis.Pekerjas.IdPekerjas + "', '" + parGajis.Bagians.IdBagians + "', '" + parGajis.Diambil + "', '" +parGajis.Subtotal + "', '"  +
+                parGajis.Kasbon+ "', '" +parGajis.TotalGaji+ "')";
 
             Koneksi.JalankanPerintahDML(sql);
         }
@@ -107,26 +98,26 @@ namespace TogaAbadiClassHitung
             List<Gajis> listGajis = new List<Gajis>();
             while (hasil.Read() == true)
             {
-                Bagians b = new Bagians(int.Parse(hasil.GetValue(11).ToString()), hasil.GetValue(13).ToString(), int.Parse(hasil.GetValue(14).ToString()), int.Parse(hasil.GetValue(15).ToString()));
+                List<ArtikelPotongs> listap = ArtikelPotongs.BacaData("id", hasil.GetValue(8).ToString());
+                ArtikelPotongs ap = new ArtikelPotongs(listap[0].IdArtikelPotongs, listap[0].Brand, listap[0].Kain,
+                    listap[0].Seri, listap[0].Yard, listap[0].Size_S, listap[0].Size_M, listap[0].Size_L, listap[0].Size_XL);
+
+                Bagians b = new Bagians(int.Parse(hasil.GetValue(7).ToString()),ap, hasil.GetValue(9).ToString(), int.Parse(hasil.GetValue(10).ToString()), int.Parse(hasil.GetValue(11).ToString()));
                 
-                Pekerjas p = new Pekerjas(int.Parse(hasil.GetValue(16).ToString()), hasil.GetValue(17).ToString());
+                Pekerjas p = new Pekerjas(int.Parse(hasil.GetValue(12).ToString()), hasil.GetValue(13).ToString());
 
                 Gajis g = new Gajis(int.Parse(hasil.GetValue(0).ToString()), int.Parse(hasil.GetValue(3).ToString()), int.Parse(hasil.GetValue(4).ToString()),
-                    int.Parse(hasil.GetValue(5).ToString()), int.Parse(hasil.GetValue(6).ToString()), int.Parse(hasil.GetValue(7).ToString()),
-                    int.Parse(hasil.GetValue(8).ToString()), int.Parse(hasil.GetValue(9).ToString()), p, b);
+                    int.Parse(hasil.GetValue(5).ToString()), int.Parse(hasil.GetValue(6).ToString()), p, b);
 
                 listGajis.Add(g);
             }
             return listGajis;
         }
-        public static int HitungGaji(Gajis g)
+        public static int HitungGaji(int biayasatuan,int kasbon, int potongankasbon,int diambil, Bagians b)
         {
-            int Subtotal = g.Subtotal;
-            int SisaKasbon = g.SisaKasbon;
-            int Kasbon = g.Kasbon;
-            int TotalKasbon = g.TotalKasbon;
-            int PotonganKasbon = g.PotonganKasbon;
-            int gaji = Subtotal - ((SisaKasbon + Kasbon)-PotonganKasbon);//perlu di improve
+            
+            int Subtotal = b.Biaya_Satuan * diambil;
+            int gaji = Subtotal - potongankasbon + kasbon;
 
 
             return gaji;

@@ -36,10 +36,10 @@ namespace kerjapraktik
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxHarga = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewData = new System.Windows.Forms.DataGridView();
             this.Bagian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Biaya = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxIDArt
@@ -65,27 +65,16 @@ namespace kerjapraktik
             this.comboBoxBagian.FormattingEnabled = true;
             this.comboBoxBagian.Items.AddRange(new object[] {
             "Gosok krah",
-            "",
             "Krah ",
-            "",
             "Badan (include badan depan, belakang, skaur, jahit tangan) ",
-            "",
             "Roges",
-            "",
             "Obras tangan",
-            "",
             "Tindes tangan",
-            "",
             "Make up",
-            "",
             "Lipat bawah",
-            "",
             "Naskat",
-            "",
             "Kancing",
-            "",
             "Bersih benang",
-            "",
             "Gosok"});
             this.comboBoxBagian.Location = new System.Drawing.Point(68, 51);
             this.comboBoxBagian.Name = "comboBoxBagian";
@@ -128,16 +117,16 @@ namespace kerjapraktik
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // dataGridView1
+            // dataGridViewData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Bagian,
             this.Biaya});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 130);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(329, 249);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridViewData.Location = new System.Drawing.Point(15, 130);
+            this.dataGridViewData.Name = "dataGridViewData";
+            this.dataGridViewData.Size = new System.Drawing.Size(329, 249);
+            this.dataGridViewData.TabIndex = 7;
             // 
             // Bagian
             // 
@@ -154,7 +143,7 @@ namespace kerjapraktik
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(356, 391);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewData);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxHarga);
             this.Controls.Add(this.label3);
@@ -165,7 +154,7 @@ namespace kerjapraktik
             this.Name = "FormBagian";
             this.Text = "Form Bagian";
             this.Load += new System.EventHandler(this.FormBagian_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,7 +169,7 @@ namespace kerjapraktik
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxHarga;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bagian;
         private System.Windows.Forms.DataGridViewTextBoxColumn Biaya;
     }

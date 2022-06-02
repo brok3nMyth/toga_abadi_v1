@@ -122,6 +122,7 @@ namespace kerjapraktik
             this.dataGridViewData.Name = "dataGridViewData";
             this.dataGridViewData.Size = new System.Drawing.Size(736, 274);
             this.dataGridViewData.TabIndex = 31;
+            this.dataGridViewData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewData_CellContentClick);
             // 
             // seri
             // 

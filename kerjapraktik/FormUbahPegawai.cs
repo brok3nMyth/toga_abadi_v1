@@ -54,10 +54,15 @@ namespace kerjapraktik
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Pekerjas selectedPekerjas= (Pekerjas)comboBoxPegawai.SelectedItem;
-            string id = comboBoxPegawai.SelectedValue.ToString();
+            
+        }
 
-            listpegawai = Pekerjas.BacaData("idPekerjas", id );
+        private void buttonCheck_Click(object sender, EventArgs e)
+        {
+            Pekerjas selectedPekerjas = (Pekerjas)comboBoxPegawai.SelectedItem;
+            string id = comboBoxPegawai.Text.ToString();
+
+            listpegawai = Pekerjas.BacaData("id", id);
             string nama = listpegawai[0].Nama.ToString();
             textBoxNama.Text = nama;
 
