@@ -25,7 +25,8 @@ namespace kerjapraktik
             //comboBoxBagian.DataSource = listbagian;
             //comboBoxBagian.DisplayMember = "bagian";
             FormatDataGrid();
-            TampilDataGrid(); 
+            TampilDataGrid();
+            textBoxIDArt.Text = FormInputArtikelPotong.AP;
         }
 
         private void comboBoxBagian_SelectedIndexChanged(object sender, EventArgs e)
