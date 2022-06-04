@@ -17,10 +17,8 @@ namespace TogaAbadiClassHitung
         private Pekerjas pekerjas;
         private Bagians bagians;
 
-
-
-
         #endregion
+
         #region constructor
         public Gajis(int idGaji, int diambil, int subtotal, int kasbon, int totalGaji, Pekerjas pekerjas, Bagians bagians)
         {
@@ -48,6 +46,7 @@ namespace TogaAbadiClassHitung
             }
         }
         #endregion
+
         #region properties
         public int IdGaji { get => idGaji; set => idGaji = value; }
         public int Diambil { get => diambil; set => diambil = value; }
