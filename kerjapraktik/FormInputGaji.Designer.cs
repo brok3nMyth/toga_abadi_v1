@@ -46,12 +46,12 @@ namespace kerjapraktik
             this.label10 = new System.Windows.Forms.Label();
             this.totalan = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.buttonTambah = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
+            this.textBoxPotong = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxSisa = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxSubtotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -81,6 +81,7 @@ namespace kerjapraktik
             this.buttonCari.TabIndex = 133;
             this.buttonCari.Text = "Cari";
             this.buttonCari.UseVisualStyleBackColor = false;
+            this.buttonCari.Click += new System.EventHandler(this.buttonCari_Click);
             // 
             // label12
             // 
@@ -107,6 +108,7 @@ namespace kerjapraktik
             this.buttonTambahBagian.TabIndex = 128;
             this.buttonTambahBagian.Text = "Tambah Bagian";
             this.buttonTambahBagian.UseVisualStyleBackColor = true;
+            this.buttonTambahBagian.Click += new System.EventHandler(this.buttonTambahBagian_Click);
             // 
             // label13
             // 
@@ -211,6 +213,7 @@ namespace kerjapraktik
             this.buttonKunciGaji.TabIndex = 123;
             this.buttonKunciGaji.Text = "Kunci Gaji";
             this.buttonKunciGaji.UseVisualStyleBackColor = true;
+            this.buttonKunciGaji.Click += new System.EventHandler(this.buttonKunciGaji_Click);
             // 
             // label10
             // 
@@ -237,22 +240,22 @@ namespace kerjapraktik
             this.buttonTambah.Text = "TAMBAH";
             this.buttonTambah.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // textBoxTotal
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBox3.Location = new System.Drawing.Point(623, 502);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 28);
-            this.textBox3.TabIndex = 120;
+            this.textBoxTotal.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.textBoxTotal.Location = new System.Drawing.Point(623, 502);
+            this.textBoxTotal.Multiline = true;
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.Size = new System.Drawing.Size(177, 28);
+            this.textBoxTotal.TabIndex = 120;
             // 
-            // textBox2
+            // textBoxPotong
             // 
-            this.textBox2.Location = new System.Drawing.Point(623, 468);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 28);
-            this.textBox2.TabIndex = 118;
+            this.textBoxPotong.Location = new System.Drawing.Point(623, 468);
+            this.textBoxPotong.Multiline = true;
+            this.textBoxPotong.Name = "textBoxPotong";
+            this.textBoxPotong.Size = new System.Drawing.Size(177, 28);
+            this.textBoxPotong.TabIndex = 118;
             // 
             // label8
             // 
@@ -263,13 +266,13 @@ namespace kerjapraktik
             this.label8.TabIndex = 117;
             this.label8.Text = "POTONG BON : ";
             // 
-            // textBox1
+            // textBoxSisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(623, 434);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 28);
-            this.textBox1.TabIndex = 116;
+            this.textBoxSisa.Location = new System.Drawing.Point(623, 434);
+            this.textBoxSisa.Multiline = true;
+            this.textBoxSisa.Name = "textBoxSisa";
+            this.textBoxSisa.Size = new System.Drawing.Size(177, 28);
+            this.textBoxSisa.TabIndex = 116;
             // 
             // label7
             // 
@@ -280,13 +283,13 @@ namespace kerjapraktik
             this.label7.TabIndex = 115;
             this.label7.Text = "SISA BON : ";
             // 
-            // textBoxTotal
+            // textBoxSubtotal
             // 
-            this.textBoxTotal.Location = new System.Drawing.Point(623, 400);
-            this.textBoxTotal.Multiline = true;
-            this.textBoxTotal.Name = "textBoxTotal";
-            this.textBoxTotal.Size = new System.Drawing.Size(177, 28);
-            this.textBoxTotal.TabIndex = 114;
+            this.textBoxSubtotal.Location = new System.Drawing.Point(623, 400);
+            this.textBoxSubtotal.Multiline = true;
+            this.textBoxSubtotal.Name = "textBoxSubtotal";
+            this.textBoxSubtotal.Size = new System.Drawing.Size(177, 28);
+            this.textBoxSubtotal.TabIndex = 114;
             // 
             // label6
             // 
@@ -438,12 +441,12 @@ namespace kerjapraktik
             this.Controls.Add(this.buttonKunciGaji);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonTambah);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxTotal);
+            this.Controls.Add(this.textBoxPotong);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBoxSisa);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBoxSubtotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label9);
@@ -457,6 +460,7 @@ namespace kerjapraktik
             this.Controls.Add(this.textBoxTempat);
             this.Name = "FormInputGaji";
             this.Text = "Form Input Gaji";
+            this.Load += new System.EventHandler(this.FormInputGaji_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataBagian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
@@ -483,12 +487,12 @@ namespace kerjapraktik
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewComboBoxColumn totalan;
         private System.Windows.Forms.Button buttonTambah;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxTotal;
+        private System.Windows.Forms.TextBox textBoxPotong;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxSisa;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxSubtotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;

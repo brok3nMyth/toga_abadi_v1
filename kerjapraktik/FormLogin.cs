@@ -22,7 +22,7 @@ namespace kerjapraktik
         {
             try
             {
-                Koneksi k = new Koneksi("localhost", "toga_abadi_v1", "root", ""); // "superadmin", "WXWdh41aYBKzi15R"); //'root','' 
+                Koneksi k = new Koneksi("localhost", "toga_abadi_v2", "root", ""); // "superadmin", "WXWdh41aYBKzi15R"); //'root','' 
                 Koneksi k2 = new Koneksi();
 
                 textBoxUsername.Focus();
