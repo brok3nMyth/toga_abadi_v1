@@ -18,19 +18,28 @@ namespace kerjapraktik
             InitializeComponent();
         }
         List<ArtikelPotongs> listap = new List<ArtikelPotongs>();
+        public static string AP = "";
         private void buttonTambahBagian_Click(object sender, EventArgs e)
         {
-            Form form = Application.OpenForms["FormBagian"];
-            if (form == null)
+            AP = textBoxKodeArtikel.Text;
+            if (AP == "")
             {
-                FormBagian formBagian = new FormBagian();
-                formBagian.MdiParent = this.MdiParent;
-                formBagian.Show();
+                MessageBox.Show("Isi kode AP dulu!", "Peringatan");
             }
             else
             {
-                form.Show();
-                form.BringToFront();
+                Form form = Application.OpenForms["FormBagian"];
+                if (form == null)
+                {
+                    FormBagian formBagian = new FormBagian();
+                    formBagian.MdiParent = this.MdiParent;
+                    formBagian.Show();
+                }
+                else
+                {
+                    form.Show();
+                    form.BringToFront();
+                }
             }
         }
         private void TampilDataGrid()
@@ -92,7 +101,7 @@ namespace kerjapraktik
             try
             {
                 bool filled = CheckFill();
-                if (filled = true)
+                if (filled == true)
                 {
                     string kodeAP =  ArtikelPotongs.GenerateKode(textBoxKodeArtikel.Text);
                     string brand = textBoxBrand.Text;

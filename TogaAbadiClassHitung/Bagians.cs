@@ -49,6 +49,7 @@ namespace TogaAbadiClassHitung
         public ArtikelPotongs ArtikelPotongs { get => artikelPotongs; set => artikelPotongs = value; }
 
         #endregion
+
         #region method
         public static void TambahData(Bagians parBagians, string kodeAp)
         {
