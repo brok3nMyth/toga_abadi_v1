@@ -20,6 +20,7 @@ namespace kerjapraktik
         List<Pekerjas> listp = new List<Pekerjas>();
         private void FormShowPegawai_Load(object sender, EventArgs e)
         {
+            listp = Pekerjas.BacaData("", "");
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -53,6 +54,19 @@ namespace kerjapraktik
             {
                 dataGridViewData.DataSource = null;
             }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            listp = Pekerjas.BacaData(comboBoxKolom.Text, textBoxSearch.Text);
+            TampilDataGrid();
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            listp = Pekerjas.BacaData("", "");
+            FormatDataGrid();
+            TampilDataGrid();
         }
     }
 }

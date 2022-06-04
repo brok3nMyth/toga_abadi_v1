@@ -24,8 +24,11 @@ namespace kerjapraktik
         {
             //comboBoxBagian.DataSource = listbagian;
             //comboBoxBagian.DisplayMember = "bagian";
+
+            listbagian = Bagians.BacaData("id_artikel", textBoxIDArt.Text);
             FormatDataGrid();
-            TampilDataGrid(); 
+            TampilDataGrid();
+            
         }
 
         private void comboBoxBagian_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,7 +38,7 @@ namespace kerjapraktik
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            Bagians selectedBagians = (Bagians)comboBoxBagian.SelectedItem;
+            //Bagians selectedBagians = (Bagians)comboBoxBagian.SelectedItem;
             string bagian = comboBoxBagian.Text.ToString();
             string kodeAp = textBoxIDArt.Text;
             int biaya = int.Parse(textBoxHarga.Text);
@@ -55,6 +58,9 @@ namespace kerjapraktik
             Bagians b = new Bagians(bagian,ketersediaan,biaya);
             //ubah data
             Bagians.TambahData(b,kodeAp);
+            listbagian = Bagians.BacaData("id_artikel", textBoxIDArt.Text);
+            TampilDataGrid();
+
         }
         private void FormatDataGrid()
         {

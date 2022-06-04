@@ -49,14 +49,28 @@ namespace TogaAbadiClassHitung
         public ArtikelPotongs ArtikelPotongs { get => artikelPotongs; set => artikelPotongs = value; }
 
         #endregion
+
         #region method
         public static void TambahData(Bagians parBagians, string kodeAp)
         {
-            string sql = "INSERT INTO Bagians(id_artikel, Bagians, Tersedia, biaya_Satuan) values ('"+kodeAp+"','"+ parBagians.Bagian+ "', '" + parBagians.Tersedia+ "', '" + parBagians.Biaya_Satuan+ "')";
+
+            List<ArtikelPotongs> listAP = ArtikelPotongs.BacaData("id", kodeAp);
+
+            string kodeAPreal = listAP[0].IdArtikelPotongs.ToString();
+
+            string sql = "INSERT INTO Bagians(id_artikel, bagian, Tersedia, biaya_Satuan) values ('"+kodeAPreal+"','"+ parBagians.Bagian+ "', '" + parBagians.Tersedia+ "', '" + parBagians.Biaya_Satuan+ "')";
 
             Koneksi.JalankanPerintahDML(sql);
         }
         //ubah data
+        public static void UbahData(Bagians parBagians, string kodeAP)
+        {
+            string sql = "Update Bagians set Tersedia='" + parBagians.Tersedia + "',biaya_satuan= '" + parBagians.biaya_Satuan +
+                "' where id_artikel ='" + kodeAP + "' AND bagian LIKE '%"+parBagians.Bagian+"%'";
+
+
+            Koneksi.JalankanPerintahDML(sql);
+        }
         public static void HapusData(Bagians parBagians)
         {
             string sql = "DELETE FROM Bagians WHERE Username='" + parBagians.IdBagians + "'";

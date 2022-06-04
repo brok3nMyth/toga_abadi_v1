@@ -60,8 +60,10 @@ namespace TogaAbadiClassHitung
 
         public static void UbahData(ArtikelPotongs ap)
         {
-            string sql = "Update Barang set Brand='" + ap.Brand + "',kain= '" + ap.Kain+
-                "', seri ='" + ap.Seri + "', yard='" + ap.Yard+ "',size_s ='" + ap.Size_S+ "',size_m ='" + ap.Size_M + "',size_l ='" + ap.Size_L + "',size_xl ='" + ap.Size_XL + "' where id='" + ap.IdArtikelPotongs + "'";
+            string sql = "Update artikelPotongs set Brand='" + ap.Brand + "',kain= '" + ap.Kain+
+                "', seri ='" + ap.Seri + "', yard='" + ap.Yard+ "',size_s ='" + ap.Size_S+ "',size_m ='" 
+                + ap.Size_M + "',size_l ='" + ap.Size_L + "',size_xl ='" + ap.Size_XL +
+                "' where id='" + ap.IdArtikelPotongs + "'";
             Koneksi.JalankanPerintahDML(sql);
 
 
@@ -70,7 +72,7 @@ namespace TogaAbadiClassHitung
 
         public static void HapusData(ArtikelPotongs ap)
         {
-            string sql = "Delete from Barang where i='" + ap.idArtikelPotongs + "'";
+            string sql = "Delete from artikelPotongs where i='" + ap.idArtikelPotongs + "'";
 
             Koneksi.JalankanPerintahDML(sql);
         }

@@ -73,7 +73,19 @@ namespace kerjapraktik
             {
                 dataGridViewData.DataSource = null;
             }
+        }  
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            listap = ArtikelPotongs.BacaData(comboBoxKolom.Text, textBoxSearch.Text);
+            TampilDataGrid();
         }
 
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            listap = ArtikelPotongs.BacaData("", "");
+            FormatDataGrid();
+            TampilDataGrid();
+        }
     }
 }

@@ -31,6 +31,10 @@ namespace kerjapraktik
         {
             this.dataGridViewData = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.comboBoxKolom = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +56,50 @@ namespace kerjapraktik
             this.label1.TabIndex = 34;
             this.label1.Text = "ARTIKEL POTONG";
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(713, 28);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 35;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Location = new System.Drawing.Point(462, 30);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(245, 20);
+            this.textBoxSearch.TabIndex = 36;
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Location = new System.Drawing.Point(713, 428);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonReset.TabIndex = 37;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // comboBoxKolom
+            // 
+            this.comboBoxKolom.FormattingEnabled = true;
+            this.comboBoxKolom.Location = new System.Drawing.Point(326, 30);
+            this.comboBoxKolom.Name = "comboBoxKolom";
+            this.comboBoxKolom.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxKolom.TabIndex = 38;
+            // 
             // FormShowArtPotong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 435);
+            this.ClientSize = new System.Drawing.Size(800, 463);
+            this.Controls.Add(this.comboBoxKolom);
+            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.textBoxSearch);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewData);
             this.Name = "FormShowArtPotong";
@@ -72,5 +115,9 @@ namespace kerjapraktik
 
         private System.Windows.Forms.DataGridView dataGridViewData;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.ComboBox comboBoxKolom;
     }
 }

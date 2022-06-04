@@ -17,10 +17,8 @@ namespace TogaAbadiClassHitung
         private Pekerjas pekerjas;
         private Bagians bagians;
 
-
-
-
         #endregion
+
         #region constructor
         public Gajis(int idGaji, int diambil, int subtotal, int kasbon, int totalGaji, Pekerjas pekerjas, Bagians bagians)
         {
@@ -48,6 +46,7 @@ namespace TogaAbadiClassHitung
             }
         }
         #endregion
+
         #region properties
         public int IdGaji { get => idGaji; set => idGaji = value; }
         public int Diambil { get => diambil; set => diambil = value; }
@@ -81,14 +80,14 @@ namespace TogaAbadiClassHitung
             if (kriteria == "")
             {
                 //sql = "select B.idBagians, B.id_artikel, B.bagian, B.tersedia, B.biaya_satuan from Bagians B ";
-                sql = "SELECT * FROM gajis g" +
+                sql = "SELECT * FROM gajis g " +
                     "LEFT JOIN bagians b on g.models_id = b.id " +
                     "LEFT JOIN pekerjas p on g.pekerjas_id = p.id";
                     //"SELECT * FROM gajis g " +"LEFT JOIN bagians b on g.models_id = b.id" +"LEFT JOIN artikelpotongs ap on ap.id = b.id_artikel";
             }
             else
             {
-                sql = "SELECT * FROM gajis g" +
+                sql = "SELECT * FROM gajis g " +
                     "LEFT JOIN bagians b on g.models_id = b.id " +
                     "LEFT JOIN pekerjas p on g.pekerjas_id = p.id WHERE" + kriteria + " LIKE '%" +
                     nilaiKriteria + "%'";

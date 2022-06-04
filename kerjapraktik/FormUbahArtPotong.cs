@@ -14,6 +14,7 @@ namespace kerjapraktik
     public partial class FormUbahArtPotong : Form
     {
         List<ArtikelPotongs> listap = new List<ArtikelPotongs>();
+        public static string AP = ""; 
         public FormUbahArtPotong()
         {
             InitializeComponent();
@@ -21,17 +22,25 @@ namespace kerjapraktik
 
         private void buttonUbahBagian_Click(object sender, EventArgs e)
         {
-            Form form = Application.OpenForms["FormBagian"];
-            if (form == null)
+            AP = comboBoxArtikel.Text;
+            if (AP == "")
             {
-                FormBagian formBagian = new FormBagian();
-                formBagian.MdiParent = this.MdiParent;
-                formBagian.Show();
+                MessageBox.Show("Isi kode AP dulu!", "Peringatan");
             }
             else
             {
-                form.Show();
-                form.BringToFront();
+                Form form = Application.OpenForms["FormUbahBagian"];
+                if (form == null)
+                {
+                    FormUbahBagian formUbahBagian = new FormUbahBagian();
+                    formUbahBagian.MdiParent = this.MdiParent;
+                    formUbahBagian.Show();
+                }
+                else
+                {
+                    form.Show();
+                    form.BringToFront();
+                }
             }
         }
 

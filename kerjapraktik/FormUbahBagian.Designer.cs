@@ -32,7 +32,7 @@ namespace kerjapraktik
             this.dataGridViewData = new System.Windows.Forms.DataGridView();
             this.Bagian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Biaya = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonUbah = new System.Windows.Forms.Button();
             this.textBoxHarga = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@ namespace kerjapraktik
             this.dataGridViewData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Bagian,
             this.Biaya});
-            this.dataGridViewData.Location = new System.Drawing.Point(12, 128);
+            this.dataGridViewData.Location = new System.Drawing.Point(12, 135);
             this.dataGridViewData.Name = "dataGridViewData";
             this.dataGridViewData.Size = new System.Drawing.Size(315, 223);
             this.dataGridViewData.TabIndex = 15;
@@ -63,18 +63,19 @@ namespace kerjapraktik
             this.Biaya.HeaderText = "ColumnBiaya";
             this.Biaya.Name = "Biaya";
             // 
-            // buttonAdd
+            // buttonUbah
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(182, 97);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(63, 25);
-            this.buttonAdd.TabIndex = 14;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonUbah.Location = new System.Drawing.Point(184, 104);
+            this.buttonUbah.Name = "buttonUbah";
+            this.buttonUbah.Size = new System.Drawing.Size(63, 25);
+            this.buttonUbah.TabIndex = 14;
+            this.buttonUbah.Text = "Ubah";
+            this.buttonUbah.UseVisualStyleBackColor = true;
+            this.buttonUbah.Click += new System.EventHandler(this.buttonUbah_Click);
             // 
             // textBoxHarga
             // 
-            this.textBoxHarga.Location = new System.Drawing.Point(65, 78);
+            this.textBoxHarga.Location = new System.Drawing.Point(65, 77);
             this.textBoxHarga.Name = "textBoxHarga";
             this.textBoxHarga.Size = new System.Drawing.Size(100, 20);
             this.textBoxHarga.TabIndex = 13;
@@ -82,7 +83,7 @@ namespace kerjapraktik
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 78);
+            this.label3.Location = new System.Drawing.Point(22, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 12;
@@ -91,7 +92,7 @@ namespace kerjapraktik
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 52);
+            this.label2.Location = new System.Drawing.Point(19, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 11;
@@ -100,20 +101,7 @@ namespace kerjapraktik
             // comboBoxBagian
             // 
             this.comboBoxBagian.FormattingEnabled = true;
-            this.comboBoxBagian.Items.AddRange(new object[] {
-            "Gosok krah",
-            "Krah ",
-            "Badan (include badan depan, belakang, skaur, jahit tangan) ",
-            "Roges",
-            "Obras tangan",
-            "Tindes tangan",
-            "Make up",
-            "Lipat bawah",
-            "Naskat",
-            "Kancing",
-            "Bersih benang",
-            "Gosok"});
-            this.comboBoxBagian.Location = new System.Drawing.Point(65, 49);
+            this.comboBoxBagian.Location = new System.Drawing.Point(65, 48);
             this.comboBoxBagian.Name = "comboBoxBagian";
             this.comboBoxBagian.Size = new System.Drawing.Size(262, 21);
             this.comboBoxBagian.TabIndex = 10;
@@ -140,9 +128,9 @@ namespace kerjapraktik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 378);
+            this.ClientSize = new System.Drawing.Size(350, 372);
             this.Controls.Add(this.dataGridViewData);
-            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonUbah);
             this.Controls.Add(this.textBoxHarga);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -163,7 +151,7 @@ namespace kerjapraktik
         private System.Windows.Forms.DataGridView dataGridViewData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Bagian;
         private System.Windows.Forms.DataGridViewTextBoxColumn Biaya;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonUbah;
         private System.Windows.Forms.TextBox textBoxHarga;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

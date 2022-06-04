@@ -66,18 +66,16 @@ namespace kerjapraktik
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(116, 59);
-            this.textBoxPassword.Multiline = true;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(279, 30);
+            this.textBoxPassword.Size = new System.Drawing.Size(279, 20);
             this.textBoxPassword.TabIndex = 25;
             // 
             // textBoxUsername
             // 
             this.textBoxUsername.Location = new System.Drawing.Point(116, 25);
-            this.textBoxUsername.Multiline = true;
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(279, 28);
+            this.textBoxUsername.Size = new System.Drawing.Size(279, 20);
             this.textBoxUsername.TabIndex = 23;
             // 
             // labelId
@@ -128,6 +126,7 @@ namespace kerjapraktik
             this.buttonLogin.Text = "LOGIN";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
+            this.buttonLogin.Enter += new System.EventHandler(this.buttonLogin_Click);
             // 
             // FormLogin
             // 

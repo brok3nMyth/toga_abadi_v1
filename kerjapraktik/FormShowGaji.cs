@@ -18,8 +18,11 @@ namespace kerjapraktik
             InitializeComponent();
         }
         List<Gajis> listgaji = new List<Gajis>();
+        public static string idPegawai= "";
+
         private void FormShowGaji_Load(object sender, EventArgs e)
         {
+            listgaji = Gajis.BacaData("", "");
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -67,6 +70,43 @@ namespace kerjapraktik
             else
             {
                 dataGridViewData.DataSource = null;
+            }
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            listgaji = Gajis.BacaData(comboBoxKolom.Text, textBoxSearch.Text);
+            TampilDataGrid();
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            listgaji = Gajis.BacaData("", "");
+            FormatDataGrid();
+            TampilDataGrid();
+        }
+
+        private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*idPegawai = dataGridViewData.Rows;*/
+            if (idPegawai== "")
+            {
+                MessageBox.Show("Error data kosong", "Peringatan");
+            }
+            else
+            {
+                Form form = Application.OpenForms["FormShowGajiDetail"];
+                if (form == null)
+                {
+                    FormShowGajiDetail formShowGajiDetail = new FormShowGajiDetail();
+                    formShowGajiDetail.MdiParent = this.MdiParent;
+                    formShowGajiDetail.Show();
+                }
+                else
+                {
+                    form.Show();
+                    form.BringToFront();
+                }
             }
         }
     }
