@@ -66,5 +66,10 @@ namespace kerjapraktik
                 MessageBox.Show("Connection failed. Error message : " + exc.Message);
             }
         }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -14,7 +14,8 @@ namespace kerjapraktik
     public partial class FormUbahArtPotong : Form
     {
         List<ArtikelPotongs> listap = new List<ArtikelPotongs>();
-        public static string AP = ""; 
+        public static string AP = "";
+        int size = 0;
         public FormUbahArtPotong()
         {
             InitializeComponent();
@@ -46,18 +47,30 @@ namespace kerjapraktik
 
         private void buttonUbah_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string id = comboBoxArtikel.Text;
+                string brand = textBoxBrand.Text;
+                string kain = textBoxKain.Text;
+                string seri = textBoxSeri.Text;
+                int yard = int.Parse(textBoxYard.Text);
+                int s = int.Parse(textBoxS.Text);
+                int m = int.Parse(textBoxM.Text);
+                int l = int.Parse(textBoxL.Text);
+                int xl = int.Parse(textBoxXL.Text);
+                ArtikelPotongs Ap = new ArtikelPotongs(id, brand, kain, seri, yard, s, m, l, xl);
+                ArtikelPotongs.UbahData(Ap);
+                listap = ArtikelPotongs.BacaData("", "");
+                MessageBox.Show("Artikel potong "+ id +" berhasil diubah!");
+                TampilDataGrid();
+                textBoxTotal.Text = size.ToString();
+            }
+            catch (Exception ex)
+            {
 
-            string id = comboBoxArtikel.SelectedValue.ToString();
-            string brand = textBoxBrand.Text;
-            string kain = textBoxKain.Text;
-            string seri = textBoxSeri.Text;
-            int yard = int.Parse(textBoxYard.Text);
-            int s = int.Parse(textBoxS.Text);
-            int m = int.Parse(textBoxM.Text);
-            int l = int.Parse(textBoxL.Text);
-            int xl = int.Parse(textBoxXL.Text);
-            ArtikelPotongs Ap = new ArtikelPotongs(id, brand,kain,seri,yard,s,m,l,xl);
-            ArtikelPotongs.UbahData(Ap);
+                MessageBox.Show("message: " + ex);
+            }
+           
         }
 
         private void FormUbahArtPotong_Load(object sender, EventArgs e)
@@ -67,6 +80,7 @@ namespace kerjapraktik
             comboBoxArtikel.DisplayMember = "idArtikelPotongs";
             FormatDataGrid();
             TampilDataGrid();
+            textBoxTotal.ReadOnly = true;
         }
 
         private void comboBoxArtikel_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +113,9 @@ namespace kerjapraktik
             textBoxM.Text = m.ToString();
             textBoxL.Text = l.ToString();
             textBoxXL.Text = xl.ToString();
+
+            textBoxTotal.Text = size.ToString();
+
         }
         private void FormatDataGrid()
         {
@@ -138,11 +155,13 @@ namespace kerjapraktik
         {
             if (listap.Count > 0)
             {
+                size = 0;
                 dataGridViewData.Rows.Clear();
                 foreach (ArtikelPotongs ap in listap)
                 {
                     int jumlahsize = ap.Size_S + ap.Size_M + ap.Size_L + ap.Size_XL;
                     dataGridViewData.Rows.Add(ap.IdArtikelPotongs,ap.Brand,ap.Kain,ap.Seri, ap.Yard, ap.Size_S, ap.Size_M, ap.Size_L, ap.Size_XL, jumlahsize);
+                    size += jumlahsize;
                 }
             }
             else

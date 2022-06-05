@@ -22,7 +22,8 @@ namespace kerjapraktik
 
         private void FormShowGaji_Load(object sender, EventArgs e)
         {
-            listgaji = Gajis.BacaData("", "");
+            listgaji = Gajis.BacaData2("", "");
+
             FormatDataGrid();
             TampilDataGrid();
         }
@@ -31,21 +32,13 @@ namespace kerjapraktik
             dataGridViewData.Columns.Clear();
 
             dataGridViewData.Columns.Add("id", "Id");
-            dataGridViewData.Columns.Add("pekerjas_nama", "Nama Pekerja");
-            dataGridViewData.Columns.Add("kodeAP", "Artikel");
-            dataGridViewData.Columns.Add("models_nama", "Model");
-            dataGridViewData.Columns.Add("harga_satuan", "Harga Satuan");
-            dataGridViewData.Columns.Add("diambil", "Diambil");
+            dataGridViewData.Columns.Add("pekerjas_nama", "Nama Pekerja"); 
             dataGridViewData.Columns.Add("subtotal", "Subtotal");
             dataGridViewData.Columns.Add("kasbon", "Kasbon");
             dataGridViewData.Columns.Add("total", "Total Gaji");
 
             dataGridViewData.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["pekerjas_nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewData.Columns["kodeAP"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewData.Columns["models_nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewData.Columns["harga_satuan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewData.Columns["diambil"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["subtotal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["kasbon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["total"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -53,8 +46,8 @@ namespace kerjapraktik
             /* dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
              dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";*/
 
-            dataGridViewData.AllowUserToAddRows = true;
-            dataGridViewData.ReadOnly = false;
+            dataGridViewData.AllowUserToAddRows = false;
+            dataGridViewData.ReadOnly = true;
         }
         private void TampilDataGrid()
         {
@@ -63,8 +56,7 @@ namespace kerjapraktik
                 dataGridViewData.Rows.Clear();
                 foreach (Gajis g in listgaji)
                 {
-                    dataGridViewData.Rows.Add(g.IdGaji, g.Pekerjas.Nama, g.Bagians.ArtikelPotongs.IdArtikelPotongs,
-                        g.Bagians.Bagian, g.Bagians.Biaya_Satuan, g.Diambil, g.Subtotal, g.Kasbon, g.TotalGaji);
+                    dataGridViewData.Rows.Add(g.IdGaji, g.Nama, g.Subtotal, g.Kasbon, g.TotalGaji);
                 }
             }
             else
@@ -75,20 +67,20 @@ namespace kerjapraktik
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            listgaji = Gajis.BacaData(comboBoxKolom.Text, textBoxSearch.Text);
+            listgaji = Gajis.BacaData2(comboBoxKolom.Text, textBoxSearch.Text);
             TampilDataGrid();
         }
 
         private void buttonReset_Click(object sender, EventArgs e)
         {
-            listgaji = Gajis.BacaData("", "");
+            listgaji = Gajis.BacaData2("", "");
             FormatDataGrid();
             TampilDataGrid();
         }
 
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*idPegawai = dataGridViewData.Rows;*/
+            /*idPegawai = dataGridViewData.Rows;*//*
             if (idPegawai== "")
             {
                 MessageBox.Show("Error data kosong", "Peringatan");
@@ -107,7 +99,7 @@ namespace kerjapraktik
                     form.Show();
                     form.BringToFront();
                 }
-            }
+            }*/
         }
     }
 }

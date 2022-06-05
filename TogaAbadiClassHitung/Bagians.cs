@@ -71,6 +71,14 @@ namespace TogaAbadiClassHitung
 
             Koneksi.JalankanPerintahDML(sql);
         }
+        public static void UbahDataId(Bagians parBagians)
+        { 
+            string sql = "Update Bagians set Tersedia='" + parBagians.Tersedia + "',biaya_satuan= '" + parBagians.biaya_Satuan +
+                "' where id ='" + parBagians.idBagians+ "'";
+
+
+            Koneksi.JalankanPerintahDML(sql);
+        }
         public static void HapusData(Bagians parBagians)
         {
             string sql = "DELETE FROM Bagians WHERE Username='" + parBagians.IdBagians + "'";

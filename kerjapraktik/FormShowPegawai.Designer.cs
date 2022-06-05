@@ -59,6 +59,9 @@ namespace kerjapraktik
             // comboBoxKolom
             // 
             this.comboBoxKolom.FormattingEnabled = true;
+            this.comboBoxKolom.Items.AddRange(new object[] {
+            "id",
+            "nama"});
             this.comboBoxKolom.Location = new System.Drawing.Point(164, 25);
             this.comboBoxKolom.Name = "comboBoxKolom";
             this.comboBoxKolom.Size = new System.Drawing.Size(121, 21);

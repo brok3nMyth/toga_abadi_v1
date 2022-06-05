@@ -19,28 +19,26 @@ namespace kerjapraktik
             InitializeComponent();
         }
 
-        private void buttonKeluar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void buttonHapus_Click(object sender, EventArgs e)
         {
             Pekerjas selectedPekerjas = (Pekerjas)comboBoxPegawai.SelectedItem;
-            int id = int.Parse(comboBoxPegawai.SelectedValue.ToString());
+            int id = int.Parse(comboBoxPegawai.Text);
             string nama = textBoxNama.Text;
             Pekerjas p = new Pekerjas(id, nama);
             Pekerjas.HapusData(p);
+            MessageBox.Show("berhasil dihapus!");
         }
 
         private void buttonSimpan_Click(object sender, EventArgs e)
         {
             Pekerjas selectedPekerjas = (Pekerjas)comboBoxPegawai.SelectedItem;
-            int id = int.Parse(comboBoxPegawai.SelectedValue.ToString());
-            string nama = listpegawai[0].Nama.ToString();
+            int id = int.Parse(comboBoxPegawai.Text);
+            string nama = textBoxNama.Text;
             Pekerjas p = new Pekerjas(id, nama);
             //ubah data
             Pekerjas.UbahData(p);
+            MessageBox.Show("berhasil diubah!");
         }
 
         private void FormUbahPegawai_Load(object sender, EventArgs e)

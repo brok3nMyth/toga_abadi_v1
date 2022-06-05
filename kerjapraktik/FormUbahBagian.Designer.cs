@@ -65,7 +65,7 @@ namespace kerjapraktik
             // 
             // buttonUbah
             // 
-            this.buttonUbah.Location = new System.Drawing.Point(184, 104);
+            this.buttonUbah.Location = new System.Drawing.Point(264, 104);
             this.buttonUbah.Name = "buttonUbah";
             this.buttonUbah.Size = new System.Drawing.Size(63, 25);
             this.buttonUbah.TabIndex = 14;

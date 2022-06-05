@@ -68,6 +68,9 @@ namespace kerjapraktik
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxTempat = new System.Windows.Forms.TextBox();
+            this.textBoxKasbon = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.buttonCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataBagian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
@@ -185,7 +188,7 @@ namespace kerjapraktik
             this.Biaya});
             this.dataGridViewDataBagian.Location = new System.Drawing.Point(15, 340);
             this.dataGridViewDataBagian.Name = "dataGridViewDataBagian";
-            this.dataGridViewDataBagian.Size = new System.Drawing.Size(357, 191);
+            this.dataGridViewDataBagian.Size = new System.Drawing.Size(357, 239);
             this.dataGridViewDataBagian.TabIndex = 129;
             // 
             // label11
@@ -239,28 +242,31 @@ namespace kerjapraktik
             this.buttonTambah.TabIndex = 121;
             this.buttonTambah.Text = "TAMBAH";
             this.buttonTambah.UseVisualStyleBackColor = true;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // textBoxTotal
             // 
             this.textBoxTotal.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.textBoxTotal.Location = new System.Drawing.Point(623, 502);
+            this.textBoxTotal.Location = new System.Drawing.Point(623, 537);
             this.textBoxTotal.Multiline = true;
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.Size = new System.Drawing.Size(177, 28);
             this.textBoxTotal.TabIndex = 120;
+            this.textBoxTotal.Text = "0";
             // 
             // textBoxPotong
             // 
-            this.textBoxPotong.Location = new System.Drawing.Point(623, 468);
+            this.textBoxPotong.Location = new System.Drawing.Point(623, 503);
             this.textBoxPotong.Multiline = true;
             this.textBoxPotong.Name = "textBoxPotong";
             this.textBoxPotong.Size = new System.Drawing.Size(177, 28);
             this.textBoxPotong.TabIndex = 118;
+            this.textBoxPotong.Text = "0";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(524, 471);
+            this.label8.Location = new System.Drawing.Point(524, 506);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 13);
             this.label8.TabIndex = 117;
@@ -268,11 +274,14 @@ namespace kerjapraktik
             // 
             // textBoxSisa
             // 
+            this.textBoxSisa.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxSisa.Enabled = false;
             this.textBoxSisa.Location = new System.Drawing.Point(623, 434);
             this.textBoxSisa.Multiline = true;
             this.textBoxSisa.Name = "textBoxSisa";
             this.textBoxSisa.Size = new System.Drawing.Size(177, 28);
             this.textBoxSisa.TabIndex = 116;
+            this.textBoxSisa.Text = "0";
             // 
             // label7
             // 
@@ -285,11 +294,15 @@ namespace kerjapraktik
             // 
             // textBoxSubtotal
             // 
+            this.textBoxSubtotal.BackColor = System.Drawing.Color.DarkGray;
+            this.textBoxSubtotal.Enabled = false;
             this.textBoxSubtotal.Location = new System.Drawing.Point(623, 400);
             this.textBoxSubtotal.Multiline = true;
             this.textBoxSubtotal.Name = "textBoxSubtotal";
             this.textBoxSubtotal.Size = new System.Drawing.Size(177, 28);
             this.textBoxSubtotal.TabIndex = 114;
+            this.textBoxSubtotal.Text = "0";
+            this.textBoxSubtotal.TextChanged += new System.EventHandler(this.textBoxSubtotal_TextChanged);
             // 
             // label6
             // 
@@ -313,7 +326,7 @@ namespace kerjapraktik
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(561, 505);
+            this.label9.Location = new System.Drawing.Point(561, 540);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 13);
             this.label9.TabIndex = 119;
@@ -365,6 +378,7 @@ namespace kerjapraktik
             // 
             // dateTimePickerTanggalGajian
             // 
+            this.dateTimePickerTanggalGajian.CustomFormat = "yyyy-MM-dd";
             this.dateTimePickerTanggalGajian.Location = new System.Drawing.Point(126, 143);
             this.dateTimePickerTanggalGajian.Name = "dateTimePickerTanggalGajian";
             this.dateTimePickerTanggalGajian.Size = new System.Drawing.Size(235, 20);
@@ -423,11 +437,42 @@ namespace kerjapraktik
             this.textBoxTempat.Size = new System.Drawing.Size(277, 28);
             this.textBoxTempat.TabIndex = 108;
             // 
+            // textBoxKasbon
+            // 
+            this.textBoxKasbon.Location = new System.Drawing.Point(623, 469);
+            this.textBoxKasbon.Multiline = true;
+            this.textBoxKasbon.Name = "textBoxKasbon";
+            this.textBoxKasbon.Size = new System.Drawing.Size(177, 28);
+            this.textBoxKasbon.TabIndex = 135;
+            this.textBoxKasbon.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(552, 472);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 13);
+            this.label15.TabIndex = 134;
+            this.label15.Text = "KASBON : ";
+            // 
+            // buttonCheck
+            // 
+            this.buttonCheck.Location = new System.Drawing.Point(817, 531);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(131, 31);
+            this.buttonCheck.TabIndex = 136;
+            this.buttonCheck.Text = "Check";
+            this.buttonCheck.UseVisualStyleBackColor = true;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
+            // 
             // FormInputGaji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1174, 561);
+            this.ClientSize = new System.Drawing.Size(1174, 591);
+            this.Controls.Add(this.buttonCheck);
+            this.Controls.Add(this.textBoxKasbon);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.buttonCari);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBoxJumlah);
@@ -509,5 +554,8 @@ namespace kerjapraktik
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxTempat;
+        private System.Windows.Forms.TextBox textBoxKasbon;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button buttonCheck;
     }
 }

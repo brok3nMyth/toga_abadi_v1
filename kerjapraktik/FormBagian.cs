@@ -24,7 +24,7 @@ namespace kerjapraktik
         {
             //comboBoxBagian.DataSource = listbagian;
             //comboBoxBagian.DisplayMember = "bagian";
-
+            textBoxIDArt.Text = FormInputArtikelPotong.AP;
             listbagian = Bagians.BacaData("id_artikel", textBoxIDArt.Text);
             FormatDataGrid();
             TampilDataGrid();

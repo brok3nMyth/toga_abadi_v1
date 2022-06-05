@@ -30,23 +30,22 @@ namespace kerjapraktik
         private void InitializeComponent()
         {
             this.labelWarna = new System.Windows.Forms.Label();
-            this.buttonKeluar = new System.Windows.Forms.Button();
             this.buttonSimpan = new System.Windows.Forms.Button();
             this.labelNama = new System.Windows.Forms.Label();
             this.textBoxNama = new System.Windows.Forms.TextBox();
             this.labelId = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonCheck = new System.Windows.Forms.Button();
             this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
             this.buttonHapus = new System.Windows.Forms.Button();
-            this.buttonCheck = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelWarna
             // 
-            this.labelWarna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelWarna.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWarna.ForeColor = System.Drawing.Color.White;
+            this.labelWarna.BackColor = System.Drawing.SystemColors.Control;
+            this.labelWarna.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.labelWarna.ForeColor = System.Drawing.Color.Black;
             this.labelWarna.Location = new System.Drawing.Point(3, 9);
             this.labelWarna.Name = "labelWarna";
             this.labelWarna.Size = new System.Drawing.Size(444, 41);
@@ -54,24 +53,11 @@ namespace kerjapraktik
             this.labelWarna.Text = "UBAH PEGAWAI";
             this.labelWarna.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // buttonKeluar
-            // 
-            this.buttonKeluar.BackColor = System.Drawing.Color.White;
-            this.buttonKeluar.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeluar.ForeColor = System.Drawing.Color.Red;
-            this.buttonKeluar.Location = new System.Drawing.Point(336, 195);
-            this.buttonKeluar.Name = "buttonKeluar";
-            this.buttonKeluar.Size = new System.Drawing.Size(111, 41);
-            this.buttonKeluar.TabIndex = 41;
-            this.buttonKeluar.Text = "KELUAR";
-            this.buttonKeluar.UseVisualStyleBackColor = false;
-            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
-            // 
             // buttonSimpan
             // 
-            this.buttonSimpan.BackColor = System.Drawing.Color.White;
-            this.buttonSimpan.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSimpan.ForeColor = System.Drawing.Color.Red;
+            this.buttonSimpan.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.buttonSimpan.ForeColor = System.Drawing.Color.Black;
             this.buttonSimpan.Location = new System.Drawing.Point(3, 195);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(117, 41);
@@ -124,6 +110,19 @@ namespace kerjapraktik
             this.panel1.Size = new System.Drawing.Size(444, 122);
             this.panel1.TabIndex = 39;
             // 
+            // buttonCheck
+            // 
+            this.buttonCheck.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.buttonCheck.ForeColor = System.Drawing.Color.Black;
+            this.buttonCheck.Location = new System.Drawing.Point(305, 14);
+            this.buttonCheck.Name = "buttonCheck";
+            this.buttonCheck.Size = new System.Drawing.Size(120, 32);
+            this.buttonCheck.TabIndex = 42;
+            this.buttonCheck.Text = "CHECK";
+            this.buttonCheck.UseVisualStyleBackColor = false;
+            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
+            // 
             // comboBoxPegawai
             // 
             this.comboBoxPegawai.FormattingEnabled = true;
@@ -135,29 +134,16 @@ namespace kerjapraktik
             // 
             // buttonHapus
             // 
-            this.buttonHapus.BackColor = System.Drawing.Color.Red;
-            this.buttonHapus.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHapus.ForeColor = System.Drawing.Color.White;
-            this.buttonHapus.Location = new System.Drawing.Point(166, 195);
+            this.buttonHapus.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonHapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.buttonHapus.ForeColor = System.Drawing.Color.Black;
+            this.buttonHapus.Location = new System.Drawing.Point(330, 195);
             this.buttonHapus.Name = "buttonHapus";
             this.buttonHapus.Size = new System.Drawing.Size(117, 41);
             this.buttonHapus.TabIndex = 43;
             this.buttonHapus.Text = "HAPUS";
             this.buttonHapus.UseVisualStyleBackColor = false;
             this.buttonHapus.Click += new System.EventHandler(this.buttonHapus_Click);
-            // 
-            // buttonCheck
-            // 
-            this.buttonCheck.BackColor = System.Drawing.Color.White;
-            this.buttonCheck.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheck.ForeColor = System.Drawing.Color.Red;
-            this.buttonCheck.Location = new System.Drawing.Point(305, 14);
-            this.buttonCheck.Name = "buttonCheck";
-            this.buttonCheck.Size = new System.Drawing.Size(120, 32);
-            this.buttonCheck.TabIndex = 42;
-            this.buttonCheck.Text = "CHECK";
-            this.buttonCheck.UseVisualStyleBackColor = false;
-            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
             // FormUbahPegawai
             // 
@@ -166,7 +152,6 @@ namespace kerjapraktik
             this.ClientSize = new System.Drawing.Size(451, 241);
             this.Controls.Add(this.buttonHapus);
             this.Controls.Add(this.labelWarna);
-            this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.buttonSimpan);
             this.Controls.Add(this.panel1);
             this.Name = "FormUbahPegawai";
@@ -181,7 +166,6 @@ namespace kerjapraktik
         #endregion
 
         private System.Windows.Forms.Label labelWarna;
-        private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Button buttonSimpan;
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.TextBox textBoxNama;

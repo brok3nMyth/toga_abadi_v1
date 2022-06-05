@@ -63,27 +63,36 @@ namespace kerjapraktik
 
         private void buttonUbah_Click(object sender, EventArgs e)
         {
-            string bagian = comboBoxBagian.Text.ToString();
-            string kodeAp1 = textBoxIDArt.Text;
-            int biaya = int.Parse(textBoxHarga.Text);
-            listAp = ArtikelPotongs.BacaData("id", kodeAp1);
-            string kodeAP2 = listAp[0].IdArtikelPotongs.ToString();
-            string brand = listAp[0].Brand.ToString();
-            string kain = listAp[0].Kain.ToString();
-            string seri = listAp[0].Seri.ToString();
-            int yard = int.Parse(listAp[0].Yard.ToString());
-            int s = int.Parse(listAp[0].Size_S.ToString());
-            int m = int.Parse(listAp[0].Size_M.ToString());
-            int l = int.Parse(listAp[0].Size_L.ToString());
-            int xl = int.Parse(listAp[0].Size_XL.ToString());
-            ArtikelPotongs ap = new ArtikelPotongs(kodeAP2, brand, kain, seri, yard, s, m, l, xl);
-            int ketersediaan = ArtikelPotongs.HitungTotalOrder(ap);
+            try
+            {
+                string bagian = comboBoxBagian.Text.ToString();
+                string kodeAp1 = textBoxIDArt.Text;
+                int biaya = int.Parse(textBoxHarga.Text);
+                listAp = ArtikelPotongs.BacaData("id", kodeAp1);
+                string kodeAP2 = listAp[0].IdArtikelPotongs.ToString();
+                string brand = listAp[0].Brand.ToString();
+                string kain = listAp[0].Kain.ToString();
+                string seri = listAp[0].Seri.ToString();
+                int yard = int.Parse(listAp[0].Yard.ToString());
+                int s = int.Parse(listAp[0].Size_S.ToString());
+                int m = int.Parse(listAp[0].Size_M.ToString());
+                int l = int.Parse(listAp[0].Size_L.ToString());
+                int xl = int.Parse(listAp[0].Size_XL.ToString());
+                ArtikelPotongs ap = new ArtikelPotongs(kodeAP2, brand, kain, seri, yard, s, m, l, xl);
+                int ketersediaan = ArtikelPotongs.HitungTotalOrder(ap);
 
-            Bagians b = new Bagians(bagian, ketersediaan, biaya);
-            //ubah data
-            Bagians.UbahData(b, kodeAP2);
-            listbagian = Bagians.BacaData("id_artikel", textBoxIDArt.Text);
-            TampilDataGrid();
+                Bagians b = new Bagians(bagian, ketersediaan, biaya);
+                //ubah data
+                Bagians.UbahData(b, kodeAP2);
+                listbagian = Bagians.BacaData("id_artikel", textBoxIDArt.Text);
+                TampilDataGrid();
+                MessageBox.Show("bagian " + bagian + " berhasil diubah.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("msg: "+ ex);
+            }
+            
         }
     }
 }
