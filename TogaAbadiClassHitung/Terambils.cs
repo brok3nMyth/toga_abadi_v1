@@ -120,10 +120,11 @@ namespace TogaAbadiClassHitung
             while (hasil.Read() == true)
             {
                 List<Pekerjas> listp = Pekerjas.BacaData("id", hasil.GetValue(9).ToString());
-                Pekerjas p = new Pekerjas(listp[0].IdPekerjas,listp[0].Nama);
+                Pekerjas p = new Pekerjas(listp[0].IdPekerjas,listp[0].Nama,listp[0].Nik,listp[0].Alamat_domisili);
 
-                Gajis g = new Gajis(int.Parse(hasil.GetValue(8).ToString()), hasil.GetValue(10).ToString(), int.Parse(hasil.GetValue(12).ToString()), int.Parse(hasil.GetValue(13).ToString()),
-                    int.Parse(hasil.GetValue(14).ToString()), p.Nama);
+                Gajis g = new Gajis(int.Parse(hasil.GetValue(8).ToString()), hasil.GetValue(10).ToString(), int.Parse(hasil.GetValue(11).ToString()),
+                    int.Parse(hasil.GetValue(12).ToString()), int.Parse(hasil.GetValue(13).ToString()),
+                    hasil.GetValue(14).ToString(), hasil.GetValue(15).ToString(), hasil.GetValue(16).ToString(), p.Nama.ToString()) ;
                 List<ArtikelPotongs> listAp = ArtikelPotongs.BacaData("id", kodeAP);
                 ArtikelPotongs artikel = new ArtikelPotongs(listAp[0].IdArtikelPotongs, listAp[0].Brand, listAp[0].Kain, listAp[0].Seri,
                     listAp[0].Yard, listAp[0].Size_S, listAp[0].Size_M, listAp[0].Size_L, listAp[0].Size_XL);

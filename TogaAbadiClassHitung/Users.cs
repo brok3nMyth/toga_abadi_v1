@@ -11,27 +11,12 @@ namespace TogaAbadiClassHitung
         #region fields
         private string username;
         private string password;
-        private int isAdmin;
-        private Pekerjas pekerjas;
         //public ICollection<Pekerjas> Pekerjas { get; set; }
         #endregion
 
         #region constructor
-        public Pekerjas Pekerjas
-        {
-            get => default(Pekerjas);
-            set
-            {
-            }
-        }
+        
 
-        public Users(string username, string password, int isAdmin, Pekerjas pekerjas)
-        {
-            Username = username;
-            Password = password;
-            IsAdmin = isAdmin;
-            Pekerjas = pekerjas;
-        }
         public Users(string username, string password)
         {
             Username = username;
@@ -42,13 +27,12 @@ namespace TogaAbadiClassHitung
         #region properties
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-        public int IsAdmin { get => isAdmin; set => isAdmin = value; }
         #endregion
 
         #region method
         public static void TambahData(Users parUsers)
         {
-            string sql = "INSERT INTO users(Username, Password, isAdmin) values ('" + parUsers.Username + "', '" + parUsers.Password + "', '" + parUsers.isAdmin + "', '" + parUsers.Pekerjas + "')";
+            string sql = "INSERT INTO users(Username, Password) values ('" + parUsers.Username + "', '" + parUsers.Password + "')";
 
             Koneksi.JalankanPerintahDML(sql);
         }
@@ -71,15 +55,7 @@ namespace TogaAbadiClassHitung
 
             if (Equals(pass,parPassword))
             {
-                int isAdmin = int.Parse(hasil.GetValue(1).ToString());
-                if (isAdmin == 1)
-                {
-                    status = "login";
-                }
-                else
-                {
-                    status = "login"; //nanti buat separasi UI antara user dan admin
-                }
+                status = "login";
                 
                 
             }

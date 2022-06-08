@@ -23,29 +23,50 @@ namespace kerjapraktik
             try
             {
                 bool filled = CheckFill();
-                if (filled = true)
+                if (filled == true)
                 {
-                    int id = int.Parse(textBoxId.Text);
+                    int id = 0;//ai
                     string nama = textBoxNama.Text;
-                    Pekerjas p = new Pekerjas(id, nama);
+                    string nik = textBoxNIK.Text;
+                    string domisili = textBoxDomisili.Text;
+                    if (nik.Length == 16)
+                    {
+                        var isNumeric = long.TryParse(nik, out _);
+                        if (isNumeric == true)
+                        {
+                            Pekerjas p = new Pekerjas(id, nama, nik, domisili);
 
-                    Pekerjas.TambahData(p);
+                            Pekerjas.TambahData(p);
+                            MessageBox.Show("Tambah data pegawai berhasil");
+                        }
+                        else
+                        {
+                            MessageBox.Show("NIK hanya boleh berisi angka");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("NIK harus terdiri dari 16 digit");
+                    }
+                    
+                    
+
                 }
                 else
                 {
-                    MessageBox.Show("Textbox cannot be Empty");
+                    MessageBox.Show("Semua kolom harus terisi");
                 }
             }
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show("message : " + ex);
             }
         }
         private bool CheckFill()
         {
             bool filled = false;
-            if (textBoxId.Text != "" && textBoxNama.Text != "" )
+            if (textBoxNama.Text != "" &&textBoxNIK.Text!=""&&textBoxDomisili.Text!="")
             {
                 filled = true;
             }

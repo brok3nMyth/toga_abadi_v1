@@ -30,9 +30,13 @@ namespace kerjapraktik
 
             dataGridViewData.Columns.Add("id", "Id");
             dataGridViewData.Columns.Add("nama", "Nama");
+            dataGridViewData.Columns.Add("nik", "NIK");
+            dataGridViewData.Columns.Add("alamat", "Alamat");
 
             dataGridViewData.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["nik"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["alamat"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             /* dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
              dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";*/
@@ -47,7 +51,7 @@ namespace kerjapraktik
                 dataGridViewData.Rows.Clear();
                 foreach (Pekerjas p in listp)
                 {
-                    dataGridViewData.Rows.Add(p.IdPekerjas,p.Nama);
+                    dataGridViewData.Rows.Add(p.IdPekerjas,p.Nama,p.Nik,p.Alamat_domisili);
                 }
             }
             else

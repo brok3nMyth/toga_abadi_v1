@@ -3,18 +3,15 @@
   <Class Name="TogaAbadiClassHitung.Users">
     <Position X="3.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAAQBAAAEACAAAAQgCAAQQAgAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAEAAAAAAQACAAQQAgAAAAA=</HashCode>
       <FileName>Users.cs</FileName>
       <NewMemberFileName>users.cs</NewMemberFileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Pekerjas" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="TogaAbadiClassHitung.Pekerjas">
     <Position X="6.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAMAAAAAAQAAAAEAAAQAAAAQAAAABAAA=</HashCode>
+      <HashCode>AAEAAAAAAACCAMAAgAAAQAAAAEAAAQAAAAQAAAIBAAA=</HashCode>
       <FileName>Pekerjas.cs</FileName>
       <NewMemberFileName>pekerjas.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -22,7 +19,7 @@
   <Class Name="TogaAbadiClassHitung.Bagians">
     <Position X="6.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAIAAACAAMAAgBAAAIAQAAAAAQBAAAQAQIAAAAA=</HashCode>
+      <HashCode>AgAAAAIAAACAAMAAgBAAAIBQAAAAAQBAAAQAQIAAAAA=</HashCode>
       <FileName>Bagians.cs</FileName>
       <NewMemberFileName>bagians.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -33,7 +30,7 @@
   <Class Name="TogaAbadiClassHitung.Gajis">
     <Position X="12.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACIAFCQCAAAEAMAEAABABAAAAAAAAQAACAQAAAggABQ=</HashCode>
+      <HashCode>ACYAFCQCAAAEAMAAAABAQAAAAFAAQQAQCAQAAAgkABQ=</HashCode>
       <FileName>Gajis.cs</FileName>
       <NewMemberFileName>gajis.cs</NewMemberFileName>
     </TypeIdentifier>
@@ -51,12 +48,12 @@
   <Class Name="TogaAbadiClassHitung.Terambils">
     <Position X="8.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAACAAAAAAAIAEAAAABAAAQAAAAUAAAAQAAAQAAAA=</HashCode>
+      <HashCode>BAAAACAAAACCAIAUhgAAFAQAQAAAAUAAAAQAAAQAAAA=</HashCode>
       <FileName>Terambils.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Gajis" />
       <Property Name="Bagians" />
+      <Property Name="Gajis" />
     </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />

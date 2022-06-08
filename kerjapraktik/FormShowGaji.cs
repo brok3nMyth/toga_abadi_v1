@@ -36,12 +36,14 @@ namespace kerjapraktik
             dataGridViewData.Columns.Add("subtotal", "Subtotal");
             dataGridViewData.Columns.Add("kasbon", "Kasbon");
             dataGridViewData.Columns.Add("total", "Total Gaji");
+            dataGridViewData.Columns.Add("tanggal", "Tanggal");
 
             dataGridViewData.Columns["id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["pekerjas_nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["subtotal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["kasbon"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewData.Columns["total"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewData.Columns["tanggal"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             /* dataGridViewData.Columns["HargaBeli"].DefaultCellStyle.Format = "#,###";
              dataGridViewData.Columns["SubTotal"].DefaultCellStyle.Format = "#,###";*/
@@ -56,7 +58,8 @@ namespace kerjapraktik
                 dataGridViewData.Rows.Clear();
                 foreach (Gajis g in listgaji)
                 {
-                    dataGridViewData.Rows.Add(g.IdGaji, g.Nama, g.Subtotal, g.Kasbon, g.TotalGaji);
+                    string tanggal = g.Tanggal + "/" + g.Bulan + "/" + g.Tahun;
+                    dataGridViewData.Rows.Add(g.IdGaji, g.Nama, g.Subtotal, g.Kasbon, g.TotalGaji,tanggal);
                 }
             }
             else

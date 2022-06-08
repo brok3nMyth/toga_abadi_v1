@@ -20,25 +20,23 @@ namespace kerjapraktik
         }
 
 
-        private void buttonHapus_Click(object sender, EventArgs e)
-        {
-            Pekerjas selectedPekerjas = (Pekerjas)comboBoxPegawai.SelectedItem;
-            int id = int.Parse(comboBoxPegawai.Text);
-            string nama = textBoxNama.Text;
-            Pekerjas p = new Pekerjas(id, nama);
-            Pekerjas.HapusData(p);
-            MessageBox.Show("berhasil dihapus!");
-        }
-
         private void buttonSimpan_Click(object sender, EventArgs e)
         {
             Pekerjas selectedPekerjas = (Pekerjas)comboBoxPegawai.SelectedItem;
             int id = int.Parse(comboBoxPegawai.Text);
             string nama = textBoxNama.Text;
-            Pekerjas p = new Pekerjas(id, nama);
-            //ubah data
-            Pekerjas.UbahData(p);
-            MessageBox.Show("berhasil diubah!");
+            string nik = textBoxNIK.Text;
+            string domisili = textBoxDomisili.Text;
+            var isNumeric = int.TryParse(nik, out _);
+            if (isNumeric == true)
+            {
+                Pekerjas p = new Pekerjas(id, nama, nik, domisili);
+
+                Pekerjas.TambahData(p);
+                MessageBox.Show("berhasil diubah!");
+            }
+            MessageBox.Show("NIK hanya boleh berisi angka");
+            
         }
 
         private void FormUbahPegawai_Load(object sender, EventArgs e)
@@ -62,9 +60,19 @@ namespace kerjapraktik
 
             listpegawai = Pekerjas.BacaData("id", id);
             string nama = listpegawai[0].Nama.ToString();
+            string nik = listpegawai[0].Nik.ToString();
+            string alamat = listpegawai[0].Alamat_domisili.ToString();
+
             textBoxNama.Text = nama;
+            textBoxNIK.Text = nik;
+            textBoxDomisili.Text = alamat;
 
             textBoxNama.Focus();
+        }
+
+        private void textBoxDomisili_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

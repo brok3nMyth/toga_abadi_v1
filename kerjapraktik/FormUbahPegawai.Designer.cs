@@ -37,7 +37,10 @@ namespace kerjapraktik
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonCheck = new System.Windows.Forms.Button();
             this.comboBoxPegawai = new System.Windows.Forms.ComboBox();
-            this.buttonHapus = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxDomisili = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNIK = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +61,7 @@ namespace kerjapraktik
             this.buttonSimpan.BackColor = System.Drawing.SystemColors.Control;
             this.buttonSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.buttonSimpan.ForeColor = System.Drawing.Color.Black;
-            this.buttonSimpan.Location = new System.Drawing.Point(3, 195);
+            this.buttonSimpan.Location = new System.Drawing.Point(2, 278);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(117, 41);
             this.buttonSimpan.TabIndex = 40;
@@ -91,7 +94,7 @@ namespace kerjapraktik
             this.labelId.BackColor = System.Drawing.Color.Transparent;
             this.labelId.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelId.ForeColor = System.Drawing.Color.Black;
-            this.labelId.Location = new System.Drawing.Point(40, 26);
+            this.labelId.Location = new System.Drawing.Point(43, 26);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(96, 16);
             this.labelId.TabIndex = 22;
@@ -100,6 +103,10 @@ namespace kerjapraktik
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBoxDomisili);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.textBoxNIK);
             this.panel1.Controls.Add(this.buttonCheck);
             this.panel1.Controls.Add(this.comboBoxPegawai);
             this.panel1.Controls.Add(this.labelNama);
@@ -107,7 +114,7 @@ namespace kerjapraktik
             this.panel1.Controls.Add(this.labelId);
             this.panel1.Location = new System.Drawing.Point(3, 62);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 122);
+            this.panel1.Size = new System.Drawing.Size(444, 210);
             this.panel1.TabIndex = 39;
             // 
             // buttonCheck
@@ -132,25 +139,50 @@ namespace kerjapraktik
             this.comboBoxPegawai.TabIndex = 27;
             this.comboBoxPegawai.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // buttonHapus
+            // label2
             // 
-            this.buttonHapus.BackColor = System.Drawing.SystemColors.Control;
-            this.buttonHapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.buttonHapus.ForeColor = System.Drawing.Color.Black;
-            this.buttonHapus.Location = new System.Drawing.Point(330, 195);
-            this.buttonHapus.Name = "buttonHapus";
-            this.buttonHapus.Size = new System.Drawing.Size(117, 41);
-            this.buttonHapus.TabIndex = 43;
-            this.buttonHapus.Text = "HAPUS";
-            this.buttonHapus.UseVisualStyleBackColor = false;
-            this.buttonHapus.Click += new System.EventHandler(this.buttonHapus_Click);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(64, 137);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.TabIndex = 46;
+            this.label2.Text = "DOMISILI :";
+            // 
+            // textBoxDomisili
+            // 
+            this.textBoxDomisili.Location = new System.Drawing.Point(146, 136);
+            this.textBoxDomisili.Multiline = true;
+            this.textBoxDomisili.Name = "textBoxDomisili";
+            this.textBoxDomisili.Size = new System.Drawing.Size(279, 30);
+            this.textBoxDomisili.TabIndex = 45;
+            this.textBoxDomisili.TextChanged += new System.EventHandler(this.textBoxDomisili_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(100, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "NIK : ";
+            // 
+            // textBoxNIK
+            // 
+            this.textBoxNIK.Location = new System.Drawing.Point(146, 98);
+            this.textBoxNIK.Multiline = true;
+            this.textBoxNIK.Name = "textBoxNIK";
+            this.textBoxNIK.Size = new System.Drawing.Size(279, 30);
+            this.textBoxNIK.TabIndex = 43;
             // 
             // FormUbahPegawai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 241);
-            this.Controls.Add(this.buttonHapus);
+            this.ClientSize = new System.Drawing.Size(451, 328);
             this.Controls.Add(this.labelWarna);
             this.Controls.Add(this.buttonSimpan);
             this.Controls.Add(this.panel1);
@@ -171,8 +203,11 @@ namespace kerjapraktik
         private System.Windows.Forms.TextBox textBoxNama;
         private System.Windows.Forms.Label labelId;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonHapus;
         private System.Windows.Forms.ComboBox comboBoxPegawai;
         private System.Windows.Forms.Button buttonCheck;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxDomisili;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxNIK;
     }
 }
