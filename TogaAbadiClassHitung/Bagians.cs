@@ -117,6 +117,27 @@ namespace TogaAbadiClassHitung
             }
             return listBagians;
         }
+        public static List<Bagians> BacaData2(string parbagian, string parkodeap)
+        {
+            
+               string sql = "select B.id, B.id_artikel, B.bagian, B.tersedia, B.biaya_satuan,  ap.brand, ap.kain, ap.seri, ap.yard, ap.size_S, ap.size_M, ap.size_L, ap.size_XL " +
+                    "from Bagians B inner join ArtikelPotongs ap on B.id_artikel = ap.id where b.bagian LIKE '%" + parbagian + "%' AND b.id_artikel LIKE '%" +
+                    parkodeap + "%'";
+            
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Bagians> listBagians = new List<Bagians>();
+            while (hasil.Read() == true)
+            {
+                ArtikelPotongs artikel = new ArtikelPotongs(hasil.GetValue(1).ToString(), hasil.GetValue(5).ToString(), hasil.GetValue(6).ToString(), hasil.GetValue(7).ToString(), int.Parse(hasil.GetValue(8).ToString()), int.Parse(hasil.GetValue(9).ToString()), int.Parse(hasil.GetValue(10).ToString()), int.Parse(hasil.GetValue(11).ToString()), int.Parse(hasil.GetValue(12).ToString()));
+
+                Bagians b = new Bagians(int.Parse(hasil.GetValue(0).ToString()), artikel, hasil.GetValue(2).ToString(), int.Parse(hasil.GetValue(3).ToString()),
+                    int.Parse(hasil.GetValue(4).ToString()));
+
+                listBagians.Add(b);
+            }
+            return listBagians;
+        }
         #endregion
     }
 }

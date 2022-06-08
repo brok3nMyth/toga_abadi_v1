@@ -32,12 +32,33 @@ namespace kerjapraktik
 
         private void buttonKunciGaji_Click(object sender, EventArgs e)
         {
+            
             if (textBoxNama.Enabled == true)
             {
-                textBoxNama.Enabled = false;
-                textBoxTempat.Enabled = false;
-                dateTimePickerTanggalGajian.Enabled = false;
-                buttonKunciGaji.Text = "Lepas Kunci";
+                try
+                {
+                    listP = Pekerjas.BacaData("nama", textBoxNama.Text);
+                    if (listP.Count() > 0)
+                    {
+                        string check = listP[0].Nama;
+                        textBoxNama.Text = check;
+                        textBoxNama.Enabled = false;
+                        textBoxTempat.Enabled = false;
+                        dateTimePickerTanggalGajian.Enabled = false;
+                        buttonKunciGaji.Text = "Lepas Kunci";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nama pegawai tidak ditemukan!","ALERT!");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Error message : " + ex);
+                }
             }
             else
             {
@@ -46,6 +67,7 @@ namespace kerjapraktik
                 dateTimePickerTanggalGajian.Enabled = true;
                 buttonKunciGaji.Text = "Kunci Gaji";
             }
+
         }
 
         private void FormInputGaji_Load(object sender, EventArgs e)
@@ -138,27 +160,28 @@ namespace kerjapraktik
 
         private void buttonTambahBagian_Click(object sender, EventArgs e)
         {
+            //kasbon 
+            listGaji = Gajis.BacaData("id", id);
+            int kasbonlama = Gajis.checkKasbon(textBoxNama.Text);
+            textBoxSisa.Text = kasbonlama.ToString();
+
+
+            //pembuatan gajis
             List<Pekerjas> listP = Pekerjas.BacaData("nama", textBoxNama.Text);
-            Pekerjas p = new Pekerjas(listP[0].IdPekerjas, listP[0].Nama);
+            Pekerjas p = new Pekerjas(listP[0].IdPekerjas, listP[0].Nama,listP[0].Nik,listP[0].Alamat_domisili);
             DateTime tanggal = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            Gajis g = new Gajis(textBoxTempat.Text, tanggal, 0, 0, 0, p);
+            Gajis g = new Gajis(textBoxTempat.Text, 0, 0, 0);
             if (baru ==true)
             {
                 
-                //int idG = Gajis.TambahData(g,p, DateTime.Parse(dateTimePickerTanggalGajian.Text));
-                //biar ga buat baru terus2an
                 Gajis.TambahData(g, p, tanggal);
                 baru = false;
-                MessageBox.Show("Tambah bagian pada gaji berhasil");
             }
-            else
-            {
-                MessageBox.Show("Jumlah ambil melebihi ketersediaan");
-            }
+            
             //tambah gaji
             
 
-            listBagian = Bagians.BacaData("bagian", comboBoxBagian.Text);
+            listBagian = Bagians.BacaData2(comboBoxBagian.Text,textBoxArt.Text);
             Bagians b = new Bagians(listBagian[0].IdBagians, listBagian[0].Bagian, listBagian[0].Tersedia, listBagian[0].Biaya_Satuan);
 
             if (b.Tersedia >= int.Parse(textBoxJumlah.Text))//bila tersedia<ambil
@@ -173,22 +196,18 @@ namespace kerjapraktik
                 Terambils.TambahData(t, g, b);
                 listT = Terambils.BacaData("gajis_id", "", textBoxArt.Text);
             }
+            else
+            {
+                MessageBox.Show("Jumlah ambil melebihi ketersediaan");
+            }
 
             FormatDataGridGaji();
             TampilDataGridGaji();
 
-            //tampilakn subtotal
 
             textBoxSubtotal.Text = subtotal.ToString();
 
 
-            //kasbon 
-            listGaji = Gajis.BacaData("id", id);
-            int kasbon = listGaji[0].Kasbon;
-            textBoxSisa.Text = kasbon.ToString();
-
-            //Bagians b = new Bagians();
-            
 
             //tampilkan data di datagridview
             listBagian = Bagians.BacaData("id_artikel", textBoxArt.Text);
@@ -201,13 +220,13 @@ namespace kerjapraktik
             try
             {
                 int kasbon = int.Parse(textBoxKasbon.Text);
-                int kasInp = int.Parse(textBoxSisa.Text) + kasbon;
                 int potong = int.Parse(textBoxPotong.Text);
+                int kasInp = int.Parse(textBoxSisa.Text) + kasbon - potong;
                 int total = subtotal - potong + kasbon;
                 listP = Pekerjas.BacaData("nama", textBoxNama.Text);
                 listGaji = Gajis.BacaData("id", id);
-                Pekerjas p = new Pekerjas(listP[0].IdPekerjas, listP[0].Nama);
-                Gajis g2 = new Gajis(id, listGaji[0].Tanggal, subtotal, kasInp, total, p);
+                Pekerjas p = new Pekerjas(listP[0].IdPekerjas, listP[0].Nama, listP[0].Nik,listP[0].Alamat_domisili);
+                Gajis g2 = new Gajis(id, subtotal, kasInp, total, listGaji[0].Tanggal, listGaji[0].Bulan, listGaji[0].Tahun, p);
 
                 Gajis.UbahData(g2);
 

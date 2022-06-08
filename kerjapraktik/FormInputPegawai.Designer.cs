@@ -32,19 +32,21 @@ namespace kerjapraktik
             this.buttonSimpan = new System.Windows.Forms.Button();
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.labelWarna = new System.Windows.Forms.Label();
-            this.labelId = new System.Windows.Forms.Label();
-            this.textBoxId = new System.Windows.Forms.TextBox();
             this.textBoxNama = new System.Windows.Forms.TextBox();
             this.labelNama = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxNIK = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxDomisili = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSimpan
             // 
-            this.buttonSimpan.BackColor = System.Drawing.Color.White;
+            this.buttonSimpan.BackColor = System.Drawing.SystemColors.Control;
             this.buttonSimpan.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSimpan.ForeColor = System.Drawing.Color.Red;
+            this.buttonSimpan.ForeColor = System.Drawing.Color.Black;
             this.buttonSimpan.Location = new System.Drawing.Point(12, 195);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(117, 41);
@@ -55,9 +57,9 @@ namespace kerjapraktik
             // 
             // buttonKeluar
             // 
-            this.buttonKeluar.BackColor = System.Drawing.Color.White;
+            this.buttonKeluar.BackColor = System.Drawing.SystemColors.Control;
             this.buttonKeluar.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeluar.ForeColor = System.Drawing.Color.Red;
+            this.buttonKeluar.ForeColor = System.Drawing.Color.Black;
             this.buttonKeluar.Location = new System.Drawing.Point(345, 195);
             this.buttonKeluar.Name = "buttonKeluar";
             this.buttonKeluar.Size = new System.Drawing.Size(111, 41);
@@ -68,9 +70,9 @@ namespace kerjapraktik
             // 
             // labelWarna
             // 
-            this.labelWarna.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelWarna.BackColor = System.Drawing.SystemColors.Control;
             this.labelWarna.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWarna.ForeColor = System.Drawing.Color.White;
+            this.labelWarna.ForeColor = System.Drawing.Color.Black;
             this.labelWarna.Location = new System.Drawing.Point(12, 9);
             this.labelWarna.Name = "labelWarna";
             this.labelWarna.Size = new System.Drawing.Size(444, 41);
@@ -78,29 +80,9 @@ namespace kerjapraktik
             this.labelWarna.Text = "TAMBAH PEGAWAI";
             this.labelWarna.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelId
-            // 
-            this.labelId.AutoSize = true;
-            this.labelId.BackColor = System.Drawing.Color.Transparent;
-            this.labelId.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.ForeColor = System.Drawing.Color.Black;
-            this.labelId.Location = new System.Drawing.Point(40, 26);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(96, 16);
-            this.labelId.TabIndex = 22;
-            this.labelId.Text = "ID PEGAWAI :";
-            // 
-            // textBoxId
-            // 
-            this.textBoxId.Location = new System.Drawing.Point(146, 25);
-            this.textBoxId.Multiline = true;
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(56, 28);
-            this.textBoxId.TabIndex = 23;
-            // 
             // textBoxNama
             // 
-            this.textBoxNama.Location = new System.Drawing.Point(146, 59);
+            this.textBoxNama.Location = new System.Drawing.Point(146, 14);
             this.textBoxNama.Multiline = true;
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(279, 30);
@@ -111,7 +93,7 @@ namespace kerjapraktik
             this.labelNama.AutoSize = true;
             this.labelNama.BackColor = System.Drawing.Color.Transparent;
             this.labelNama.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNama.Location = new System.Drawing.Point(19, 60);
+            this.labelNama.Location = new System.Drawing.Point(19, 15);
             this.labelNama.Name = "labelNama";
             this.labelNama.Size = new System.Drawing.Size(121, 16);
             this.labelNama.TabIndex = 26;
@@ -120,14 +102,54 @@ namespace kerjapraktik
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBoxDomisili);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.textBoxNIK);
             this.panel1.Controls.Add(this.labelNama);
             this.panel1.Controls.Add(this.textBoxNama);
-            this.panel1.Controls.Add(this.textBoxId);
-            this.panel1.Controls.Add(this.labelId);
             this.panel1.Location = new System.Drawing.Point(12, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 122);
             this.panel1.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "NIK : ";
+            // 
+            // textBoxNIK
+            // 
+            this.textBoxNIK.Location = new System.Drawing.Point(146, 51);
+            this.textBoxNIK.Multiline = true;
+            this.textBoxNIK.Name = "textBoxNIK";
+            this.textBoxNIK.Size = new System.Drawing.Size(279, 30);
+            this.textBoxNIK.TabIndex = 27;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 16);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "DOMISILI :";
+            // 
+            // textBoxDomisili
+            // 
+            this.textBoxDomisili.Location = new System.Drawing.Point(146, 89);
+            this.textBoxDomisili.Multiline = true;
+            this.textBoxDomisili.Name = "textBoxDomisili";
+            this.textBoxDomisili.Size = new System.Drawing.Size(279, 30);
+            this.textBoxDomisili.TabIndex = 29;
             // 
             // FormInputPegawai
             // 
@@ -151,10 +173,12 @@ namespace kerjapraktik
         private System.Windows.Forms.Button buttonSimpan;
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Label labelWarna;
-        private System.Windows.Forms.Label labelId;
-        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.TextBox textBoxNama;
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxDomisili;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxNIK;
     }
 }
