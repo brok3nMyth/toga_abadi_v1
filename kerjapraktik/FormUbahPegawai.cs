@@ -27,15 +27,14 @@ namespace kerjapraktik
             string nama = textBoxNama.Text;
             string nik = textBoxNIK.Text;
             string domisili = textBoxDomisili.Text;
-            var isNumeric = int.TryParse(nik, out _);
+            var isNumeric = long.TryParse(nik, out _);
             if (isNumeric == true)
             {
                 Pekerjas p = new Pekerjas(id, nama, nik, domisili);
 
-                Pekerjas.TambahData(p);
+                Pekerjas.UbahData(p);
                 MessageBox.Show("berhasil diubah!");
             }
-            MessageBox.Show("NIK hanya boleh berisi angka");
             
         }
 

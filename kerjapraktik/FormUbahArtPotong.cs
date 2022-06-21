@@ -49,21 +49,30 @@ namespace kerjapraktik
         {
             try
             {
-                string id = comboBoxArtikel.Text;
-                string brand = textBoxBrand.Text;
-                string kain = textBoxKain.Text;
-                string seri = textBoxSeri.Text;
-                int yard = int.Parse(textBoxYard.Text);
-                int s = int.Parse(textBoxS.Text);
-                int m = int.Parse(textBoxM.Text);
-                int l = int.Parse(textBoxL.Text);
-                int xl = int.Parse(textBoxXL.Text);
-                ArtikelPotongs Ap = new ArtikelPotongs(id, brand, kain, seri, yard, s, m, l, xl);
-                ArtikelPotongs.UbahData(Ap);
-                listap = ArtikelPotongs.BacaData("", "");
-                MessageBox.Show("Artikel potong "+ id +" berhasil diubah!");
-                TampilDataGrid();
-                textBoxTotal.Text = size.ToString();
+                bool checkfill = CheckFill();
+                if (checkfill == true)
+                {
+                    string id = comboBoxArtikel.Text;
+                    string brand = textBoxBrand.Text;
+                    string kain = textBoxKain.Text;
+                    string seri = textBoxSeri.Text;
+                    int yard = int.Parse(textBoxYard.Text);
+                    int s = int.Parse(textBoxS.Text);
+                    int m = int.Parse(textBoxM.Text);
+                    int l = int.Parse(textBoxL.Text);
+                    int xl = int.Parse(textBoxXL.Text);
+                    ArtikelPotongs Ap = new ArtikelPotongs(id, brand, kain, seri, yard, s, m, l, xl);
+                    ArtikelPotongs.UbahData(Ap);
+                    listap = ArtikelPotongs.BacaData("", "");
+                    MessageBox.Show("Artikel potong " + id + " berhasil diubah!");
+                    TampilDataGrid();
+                    textBoxTotal.Text = size.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Textbox cannot be empty");
+                }
+                
             }
             catch (Exception ex)
             {
@@ -72,7 +81,15 @@ namespace kerjapraktik
             }
            
         }
-
+        private bool CheckFill()
+        {
+            bool filled = false;
+            if (comboBoxArtikel.Text != "" && textBoxBrand.Text != "" && textBoxKain.Text != "" && textBoxSeri.Text != "")
+            {
+                filled = true;
+            }
+            return filled;
+        }
         private void FormUbahArtPotong_Load(object sender, EventArgs e)
         {
             listap = ArtikelPotongs.BacaData("", "");

@@ -39,28 +39,45 @@ namespace kerjapraktik
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             //Bagians selectedBagians = (Bagians)comboBoxBagian.SelectedItem;
-            string bagian = comboBoxBagian.Text.ToString();
-            string kodeAp = textBoxIDArt.Text;
-            int biaya = int.Parse(textBoxHarga.Text);
-            listAp = ArtikelPotongs.BacaData("id", kodeAp);
-            string kodeAP = listAp[0].IdArtikelPotongs.ToString();
-            string brand = listAp[0].Brand.ToString();
-            string kain = listAp[0].Kain.ToString();
-            string seri = listAp[0].Seri.ToString();
-            int yard = int.Parse(listAp[0].Yard.ToString());
-            int s = int.Parse(listAp[0].Size_S.ToString());
-            int m = int.Parse(listAp[0].Size_M.ToString());
-            int l = int.Parse(listAp[0].Size_L.ToString());
-            int xl = int.Parse(listAp[0].Size_XL.ToString());
-            ArtikelPotongs ap = new ArtikelPotongs(kodeAp,brand,kain,seri, yard, s, m, l, xl);
-            int ketersediaan = ArtikelPotongs.HitungTotalOrder(ap);
+            bool checkfill = CheckFill();
+            if (checkfill == true)
+            {
+                string bagian = comboBoxBagian.Text.ToString();
+                string kodeAp = textBoxIDArt.Text;
+                int biaya = int.Parse(textBoxHarga.Text);
+                listAp = ArtikelPotongs.BacaData("id", kodeAp);
+                string kodeAP = listAp[0].IdArtikelPotongs.ToString();
+                string brand = listAp[0].Brand.ToString();
+                string kain = listAp[0].Kain.ToString();
+                string seri = listAp[0].Seri.ToString();
+                int yard = int.Parse(listAp[0].Yard.ToString());
+                int s = int.Parse(listAp[0].Size_S.ToString());
+                int m = int.Parse(listAp[0].Size_M.ToString());
+                int l = int.Parse(listAp[0].Size_L.ToString());
+                int xl = int.Parse(listAp[0].Size_XL.ToString());
+                ArtikelPotongs ap = new ArtikelPotongs(kodeAp, brand, kain, seri, yard, s, m, l, xl);
+                int ketersediaan = ArtikelPotongs.HitungTotalOrder(ap);
 
-            Bagians b = new Bagians(bagian,ketersediaan,biaya);
-            //ubah data
-            Bagians.TambahData(b,kodeAp);
-            listbagian = Bagians.BacaData("id_artikel", textBoxIDArt.Text);
-            TampilDataGrid();
+                Bagians b = new Bagians(bagian, ketersediaan, biaya);
+                //ubah data
+                Bagians.TambahData(b, kodeAp);
+                listbagian = Bagians.BacaData("id_artikel", textBoxIDArt.Text);
+                TampilDataGrid();
+            }
+            else
+            {
+                MessageBox.Show("Textbox cannot be Empty");
+            }
 
+        }
+        private bool CheckFill()
+        {
+            bool filled = false;
+            if (textBoxHarga.Text != "" && textBoxIDArt.Text != "" && comboBoxBagian.Text != "")
+            {
+                filled = true;
+            }
+            return filled;
         }
         private void FormatDataGrid()
         {

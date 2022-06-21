@@ -44,7 +44,7 @@ namespace TogaAbadiClassHitung
         }
         public static string Login(string parUsername, string parPassword)
         {
-            string sql = "select password,isAdmin from users where username like '" + parUsername+"'";
+            string sql = "select password from users where username like '" + parUsername+"'";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
@@ -56,7 +56,6 @@ namespace TogaAbadiClassHitung
             if (Equals(pass,parPassword))
             {
                 status = "login";
-                
                 
             }
             else
